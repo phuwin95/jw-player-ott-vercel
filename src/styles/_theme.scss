@@ -5,6 +5,7 @@
 $primary-color: variables.$white !default;
 $secondary-color: variables.$blue !default;
 $dark-color: #2b2c39 !default;
+$seiska-yellow: #FFED00 !default;
 
 // Body
 
@@ -13,8 +14,9 @@ $body-color: variables.$white !default;
 
 // Typography
 
-$body-font-family: Helvetica, Arial, sans-serif !default;
-$body-alt-font-family: Trebuchet MS, Helvetica, Arial, sans-serif !default;
+$body-font-family: Open Sans, sans-serif !default;
+$body-title-font-family: Open Sans Condensed, sans-serif !default;
+$body-alt-font-family: Open Sans, sans-serif !default;
 
 $body-font-weight-regular: 500 !default;
 $body-font-weight-bold: 700 !default;
