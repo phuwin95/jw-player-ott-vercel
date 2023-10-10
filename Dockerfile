@@ -6,13 +6,11 @@ WORKDIR /usr/src/app
 # Install app dependencies
 COPY package.json ./
 
-RUN yarn -v
-
 RUN yarn 
 
 # Bundle app source
 COPY . .
 
-EXPOSE 3000
+EXPOSE 8080
 
 CMD [ "yarn", "start" ]
