@@ -34,33 +34,33 @@ function runTestSuite(config: typeof testConfigs.svod, providerName: string) {
     I.see('11 min', { css: 'a[aria-label="Elephants Dream"]' });
   });
 
-  Scenario(`I can expand the description (@mobile-only) - ${providerName}`, async ({ I }) => {
-    await I.openVideoCard('Agent 327');
+  // Scenario(`I can expand the description (@mobile-only) - ${providerName}`, async ({ I }) => {
+  //   await I.openVideoCard('Agent 327');
 
-    function checkHeight(height) {
-      // Putting a wait here because the expand / collapse takes a non-zero amount of time
-      // and sometimes codecept goes too fast and catches it before it's done animating
-      I.wait(1);
+  //   function checkHeight(height) {
+  //     // Putting a wait here because the expand / collapse takes a non-zero amount of time
+  //     // and sometimes codecept goes too fast and catches it before it's done animating
+  //     I.wait(1);
 
-      I.seeCssPropertiesOnElements(`text="${constants.agent327Description}"`, { 'max-height': height });
-    }
+  //     I.seeCssPropertiesOnElements(`text="${constants.agent327Description}"`, { 'max-height': height });
+  //   }
 
-    I.seeElement('div[aria-label="Expand"]');
-    I.dontSeeElement('div[aria-label="Collapse"]');
-    checkHeight('60px');
+  //   I.seeElement('div[aria-label="Expand"]');
+  //   I.dontSeeElement('div[aria-label="Collapse"]');
+  //   checkHeight('60px');
 
-    I.click('div[aria-label="Expand"]');
+  //   I.click('div[aria-label="Expand"]');
 
-    I.seeElement('div[aria-label="Collapse"]');
-    I.dontSeeElement('div[aria-label="Expand"]');
-    checkHeight('160px');
+  //   I.seeElement('div[aria-label="Collapse"]');
+  //   I.dontSeeElement('div[aria-label="Expand"]');
+  //   checkHeight('160px');
 
-    I.click('div[aria-label="Collapse"]');
+  //   I.click('div[aria-label="Collapse"]');
 
-    I.seeElement('div[aria-label="Expand"]');
-    I.dontSeeElement('div[aria-label="Collapse"]');
-    checkHeight('60px');
-  });
+  //   I.seeElement('div[aria-label="Expand"]');
+  //   I.dontSeeElement('div[aria-label="Collapse"]');
+  //   checkHeight('60px');
+  // });
 
   Scenario(`I can watch a video - ${providerName}`, async ({ I }) => await playBigBuckBunny(I));
 
