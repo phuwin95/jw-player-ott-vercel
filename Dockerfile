@@ -5,13 +5,10 @@ WORKDIR /usr/src/app
 
 # Install app dependencies
 COPY package.json ./
-
 RUN yarn 
 
 # Bundle app source
 COPY . .
-
-EXPOSE 8080
 
 RUN yarn build
 
