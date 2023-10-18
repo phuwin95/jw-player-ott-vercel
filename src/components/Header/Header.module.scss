@@ -10,7 +10,7 @@
 .header {
   height: variables.$header-height;
   padding: 10px calc(#{variables.$base-spacing} * 2);
-  color: var(--header-contrast-color, variables.$white);
+  color: variables.$seiska-yellow;
   background: var(--header-background, transparent);
 
   //
