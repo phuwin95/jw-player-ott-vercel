@@ -144,7 +144,7 @@ export const formatSeriesMetaString = (seasonNumber?: string, episodeNumber?: st
     return '';
   }
 
-  return seasonNumber && seasonNumber !== '0' ? `S${seasonNumber}:E${episodeNumber}` : `E${episodeNumber}`;
+  return seasonNumber && seasonNumber !== '0' ? `Kausi ${seasonNumber}:Jakso ${episodeNumber}` : `Jakso ${episodeNumber}`;
 };
 
 export const formatLiveEventMetaString = (media: PlaylistItem, locale: string) => {

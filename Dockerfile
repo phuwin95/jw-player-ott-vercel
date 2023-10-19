@@ -10,7 +10,7 @@ RUN yarn
 # Bundle app source
 COPY . .
 
-RUN yarn build
+RUN APP_ENABLED_LANGUAGES=fi yarn build
 
 FROM nginx:alpine as prod
 
