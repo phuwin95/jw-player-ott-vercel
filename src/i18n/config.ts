@@ -22,6 +22,10 @@ export const DEFINED_LANGUAGES: LanguageDefinition[] = [
     code: 'es',
     displayName: 'Español',
   },
+  {
+    code: 'fi',
+    displayName: 'Suomi',
+  },
 ];
 
 export const getSupportedLanguages = () => {
