@@ -3,13 +3,13 @@
 @use 'src/styles/mixins/responsive';
 
 $small-button-height: 28px;
-$medium-button-height: 36px;
-$large-button-height: 40px;
+$medium-button-height: 46px;
+$large-button-height: 46px;
 
 .button {
   position: relative;
-  display: inline-flex;
-  justify-content: inherit;
+  display: flex;
+  justify-content: center;
   align-items: center;
   height: $medium-button-height;
   padding: 0 16px;
@@ -17,8 +17,9 @@ $large-button-height: 40px;
 
   font-family: var(--body-alt-font-family);
   font-weight: var(--body-font-weight-bold);
-  font-size: 16px;
-  line-height: 18px;
+  font-size: 17px;
+  font-style: normal;
+  line-height: 1.2;
   text-align: center;
   text-decoration: none;
   border-radius: 4px;
@@ -131,7 +132,7 @@ $large-button-height: 40px;
   display: flex;
   align-items: center;
   height: 100%;
-  margin-right: 11px;
+  margin-right: 6px;
 
   > svg {
     width: 20px;
