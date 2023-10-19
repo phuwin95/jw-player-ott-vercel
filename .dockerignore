@@ -1,0 +1,66 @@
+# Common ignore file
+#
+# Same file should be used for .gitignore and .dockerignore with the exclusion of Docker specific
+# files for .gitignore
+#
+
+# OS Specific
+# -------------------------------------------------------------
+# OSX directory properties files
+.DS_Store
+
+
+# Tool specific
+# -------------------------------------------------------------
+.idea/
+.vscode/
+
+
+# Build files
+# -------------------------------------------------------------
+build/
+dist/
+public-dist/
+
+
+# Temporary files
+# -------------------------------------------------------------
+temp/
+tmp/
+logs/
+*.tmp
+*.log*
+
+
+# Local files
+# -------------------------------------------------------------
+# Node modules
+node_modules/
+**/node_modules
+
+# Ignore configs and overrides
+config/custom.js
+*.override.js
+*.override.ts
+*.override.yml
+
+
+# Library/framework specific
+# -------------------------------------------------------------
+# Cypress
+tests/cypress/screenshots/*
+tests/cypress/videos/*
+
+# AWS
+cdk.out/
+cloudformation/
+
+
+# Docker specific
+# -------------------------------------------------------------
+# Git files
+.git
+
+# Docker files
+Dockerfile
+docker-compose*
