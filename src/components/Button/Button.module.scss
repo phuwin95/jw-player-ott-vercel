@@ -65,7 +65,7 @@ $large-button-height: 46px;
 
   &.primary {
     color: var(--highlight-contrast-color, theme.$btn-primary-color);
-    background-color: var(--highlight-color, theme.$btn-primary-bg);
+    background: theme.$btn-primary-bg-gradient;
   }
 
   &.outlined {

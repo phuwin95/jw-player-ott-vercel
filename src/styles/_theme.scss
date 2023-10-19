@@ -5,7 +5,7 @@
 $primary-color: variables.$white !default;
 $secondary-color: variables.$blue !default;
 $dark-color: #2b2c39 !default;
-$seiska-yellow: #FFED00 !default;
+$seiska-yellow: #ffed00 !default;
 
 // Body
 
@@ -28,6 +28,7 @@ $btn-default-color: variables.$white !default;
 
 $btn-primary-bg: variables.$white !default;
 $btn-primary-color: variables.$black !default;
+$btn-primary-bg-gradient: linear-gradient(180deg, rgba(255, 107, 0, 0.45) 0%, rgba(0, 0, 0, 0) 100%), linear-gradient(0deg, #ffed00, #ffed00) !default;
 
 $btn-danger-bg: rgba(0, 0, 0, 0) !default;
 $btn-danger-color: variables.$red-dark !default;
