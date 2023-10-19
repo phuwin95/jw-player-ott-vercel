@@ -4,18 +4,18 @@
     "success": "Success",
     "title": "An error occurred"
   },
-  "back": "Back",
+  "back": "Takaisin",
   "card_lock": "Item locked",
-  "close_modal": "Close",
+  "close_modal": "Sulje",
   "confirmation_dialog": {
-    "close": "Cancel",
-    "confirm": "Yes"
+    "close": "Peruuta",
+    "confirm": "Kyllä"
   },
   "default_description": "JW OTT Webapp is an open-source, dynamically generated video website.",
   "default_site_name": "My OTT Application",
   "filter_videos_by": "Filter videos by {{name}}",
   "filter_videos_by_genre": "Filter videos by genre",
-  "home": "Pääsivu",
+  "home": "Etusivu",
   "live": "LIVE",
   "now": "Now",
   "optional": "(Optional)",
