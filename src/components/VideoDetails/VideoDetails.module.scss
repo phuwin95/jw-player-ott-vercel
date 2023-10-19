@@ -74,7 +74,6 @@
   font-size: 16px;
   line-height: 18px;
   letter-spacing: 0.15px;
-  
   > :first-child {
     margin-right: 8px;
   }
@@ -112,11 +111,22 @@
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  margin: 0 -6px;
+  // margin: 0 -6px;
 
   > button {
     justify-content: center;
-    margin: 6px;
+  }
+
+  @include responsive.desktop-only() {
+    > button {
+      margin: 6px;
+    }
+  }
+
+  @include responsive.tablet-only() {
+    > button {
+      margin: 5px;
+    }
   }
 
   @include responsive.mobile-and-tablet() {
@@ -137,6 +147,11 @@
 
     > button:first-child {
       margin-bottom: 8px;
+    }
+
+    > button:nth-child(2) {
+      margin-right: 5px;
+      margin-left: 0;
     }
   }
 }
