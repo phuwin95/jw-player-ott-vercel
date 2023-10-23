@@ -3,86 +3,139 @@
 exports[`<Header /> > renders header 1`] = `
 <div>
   <header
-    class="_header_f4f7a7 _static_f4f7a7"
+    class="_container_f4f7a7"
   >
     <div
-      class="_container_f4f7a7"
+      class="_menu_f4f7a7"
     >
       <div
-        class="_menu_f4f7a7"
+        aria-label="open_menu"
+        class="_iconButton_0fef65"
+        role="button"
+        tabindex="0"
       >
-        <div
-          aria-label="open_menu"
-          class="_iconButton_0fef65 _iconButton_f4f7a7"
-          role="button"
-          tabindex="0"
+        <svg
+          aria-hidden="true"
+          class="_icon_1e9999"
+          focusable="false"
+          viewBox="0 0 32 28"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <svg
-            aria-hidden="true"
-            class="_icon_1e9999"
-            focusable="false"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+          <g
+            fill="transparent"
           >
-            <g>
-              <path
-                d="M0 0h24v24H0V0z"
-                fill="none"
+            <mask
+              fill="white"
+              id="path-1-inside-1_910_802"
+            >
+              <rect
+                height="13"
+                rx="2"
+                width="13"
+                x="0.5"
               />
-              <path
-                d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+            </mask>
+            <rect
+              height="13"
+              mask="url(#path-1-inside-1_910_802)"
+              rx="2"
+              stroke="#FFED00"
+              stroke-width="6"
+              width="13"
+              x="0.5"
+            />
+            <mask
+              fill="white"
+              id="path-2-inside-2_910_802"
+            >
+              <rect
+                height="13"
+                rx="2"
+                width="13"
+                x="0.5"
+                y="15"
               />
-            </g>
-          </svg>
-        </div>
+            </mask>
+            <rect
+              height="13"
+              mask="url(#path-2-inside-2_910_802)"
+              rx="2"
+              stroke="#FFED00"
+              stroke-width="6"
+              width="13"
+              x="0.5"
+              y="15"
+            />
+            <path
+              d="M17 17C17 16.7239 17.2239 16.5 17.5 16.5H26.5C26.7761 16.5 27 16.7239 27 17V26C27 26.2761 26.7761 26.5 26.5 26.5H17.5C17.2239 26.5 17 26.2761 17 26V17Z"
+              stroke="#FFED00"
+              stroke-width="3"
+            />
+            <path
+              d="M17 2C17 1.72386 17.2239 1.5 17.5 1.5H26.5C26.7761 1.5 27 1.72386 27 2V11C27 11.2761 26.7761 11.5 26.5 11.5H17.5C17.2239 11.5 17 11.2761 17 11V2Z"
+              stroke="#FFED00"
+              stroke-width="3"
+            />
+          </g>
+        </svg>
       </div>
-      <nav
-        aria-label="menu"
-        class="_nav_f4f7a7"
-      >
-        a
-      </nav>
+    </div>
+    <nav
+      aria-label="menu"
+      class="_nav_f4f7a7"
+    >
+      a
+    </nav>
+    <div
+      class="_actions_f4f7a7"
+    >
       <div
-        class="_actions_f4f7a7"
+        aria-label="Open search"
+        class="_iconButton_0fef65 _actionButton_f4f7a7"
+        role="button"
+        tabindex="0"
       >
-        <div
-          aria-label="Open search"
-          class="_iconButton_0fef65 _iconButton_f4f7a7 _actionButton_f4f7a7"
-          role="button"
-          tabindex="0"
+        <svg
+          aria-hidden="true"
+          class="_icon_1e9999"
+          focusable="false"
+          viewBox="0 0 31 32"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <svg
-            aria-hidden="true"
-            class="_icon_1e9999"
-            focusable="false"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+          <g
+            fill="transparent"
           >
-            <g>
-              <path
-                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
-              />
-            </g>
-          </svg>
-        </div>
-        <div
-          class="_buttonContainer_f4f7a7"
+            <path
+              d="M27.8263 31.0607C28.4121 31.6464 29.3619 31.6464 29.9476 31.0607C30.5334 30.4749 30.5334 29.5251 29.9476 28.9393L27.8263 31.0607ZM29.9476 28.9393L19.9391 18.9308L17.8178 21.0521L27.8263 31.0607L29.9476 28.9393Z"
+              fill="#FFED00"
+            />
+            <path
+              d="M11.8684 22.7368C17.5947 22.7368 22.2368 18.0947 22.2368 12.3684C22.2368 6.64208 17.5947 2 11.8684 2C6.14208 2 1.5 6.64208 1.5 12.3684C1.5 18.0947 6.14208 22.7368 11.8684 22.7368Z"
+              stroke="#FFED00"
+              stroke-miterlimit="10"
+              stroke-width="3"
+            />
+             
+          </g>
+        </svg>
+      </div>
+      <div
+        class="_buttonContainer_f4f7a7"
+      >
+        <button
+          class="_button_f8f296 _default_f8f296 _outlined_f8f296"
         >
-          <button
-            class="_button_f8f296 _default_f8f296 _outlined_f8f296"
-          >
-            <span>
-              sign_in
-            </span>
-          </button>
-          <button
-            class="_button_f8f296 _primary_f8f296"
-          >
-            <span>
-              sign_up
-            </span>
-          </button>
-        </div>
+          <span>
+            sign_in
+          </span>
+        </button>
+        <button
+          class="_button_f8f296 _primary_f8f296"
+        >
+          <span>
+            sign_up
+          </span>
+        </button>
       </div>
     </div>
   </header>
