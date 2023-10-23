@@ -4,41 +4,17 @@
 @use 'src/styles/mixins/utils';
 
 //
-// Header
-// --------------------------------
-
-.header {
-  height: variables.$header-height;
-  padding: 10px calc(#{variables.$base-spacing} * 2);
-  color: variables.$seiska-yellow;
-  background: var(--header-background, transparent);
-
-  //
-  // Make header fixed
-  //
-  &.fixed {
-    position: fixed;
-    z-index: variables.$header-z-index;
-    width: 100%;
-  }
-
-  //
-  // Make header static
-  //
-  &.static {
-    position: static;
-    width: 100%;
-  }
-}
-
-//
 // Header container
 //
 .container {
-  position: relative;
+  position: absolute;
+  z-index: 1;
   display: flex;
   flex-direction: row;
-  height: 100%;
+  width: 100%;
+  height: 31px;
+  margin-top: 12px;
+  color: variables.$seiska-yellow;
 }
 
 //
@@ -46,18 +22,6 @@
 //
 .menu {
   display: none;
-}
-
-//
-// Header menu
-//
-.iconButton {
-  width: 36px;
-  height: 36px;
-
-  > svg {
-    fill: currentColor;
-  }
 }
 
 //
@@ -75,6 +39,7 @@
   display: inline-block;
   flex: 1;
   align-items: center;
+  margin-left: 20px;
 
   > a {
     height: 36px;
@@ -92,6 +57,7 @@
 .actions {
   position: relative;
   display: flex;
+  margin-right: 20px;
 
   @include responsive.mobile-and-tablet() {
     // the search container wants to position itself against the header
@@ -99,34 +65,15 @@
   }
 }
 
-.actionButton {
-  margin-left: calc(#{variables.$base-spacing} / 2);
-}
-
-//
-// Header search
-//
-.search {
-  max-width: 180px;
-}
-
 //
 // Header search container
 //
 .searchContainer {
-  position: absolute;
-  left: -#{variables.$search-bar-width-desktop};
   display: flex;
   width: variables.$search-bar-width-desktop;
 
   > div:first-child {
     flex: 1;
-  }
-
-  @include responsive.mobile-and-tablet() {
-    right: 0;
-    left: 0;
-    width: auto;
   }
 }
 
@@ -158,18 +105,16 @@
     cursor: pointer;
   }
 }
+
 //
 // mediaQueries
 // --------------------------------
 
 @include responsive.mobile-and-tablet() {
-  .header {
-    height: variables.$header-height-mobile;
-    padding: 10px calc(#{variables.$base-spacing} * 2);
-  }
 
   .menu {
     display: block;
+    margin-left: 20px;
   }
 
   .brand {
@@ -180,28 +125,37 @@
   .nav {
     display: none;
   }
+}
 
-  .searchActive {
-    .menu,
-    .brand,
-    .buttonContainer,
-    .actionButton {
-      display: none;
-    }
+@include  responsive.tablet-and-larger() {
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .buttonContainer {
+    display: none;
   }
 }
 
 @include responsive.mobile-only() {
-  .header {
-    padding: 10px variables.$base-spacing;
-  }
 
-  .brand {
-    text-align: center;
-  }
+  .menu {
+    width: 200px;
+    margin-left: 10px;
 
-  .menu,
+  }
   .actions {
-    width: 80px;
+    width: 200px;
+  }
+
+  .actionButton {
+    position: absolute;
+    right: 10px;
+  }
+
+  .searchContainer {
+    margin-right: -10px;
   }
 }
