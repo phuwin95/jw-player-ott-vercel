@@ -1,15 +1,24 @@
 @use 'src/styles/variables';
 @use 'src/styles/theme';
+@use 'src/styles/mixins/responsive';
 
 .searchBar {
   position: relative;
   height: variables.$search-height;
+  @include responsive.mobile-only() {
+    height: 24px;
+    margin-top: 6px;
+  }
 }
 
 .icon {
   position: absolute;
   margin: 6px 8px;
   pointer-events: none;
+  @include responsive.mobile-only() {
+      width: 18px;
+      height: 18px;
+  }
 }
 
 .input {
@@ -24,7 +33,7 @@
 
   background: rgba(variables.$black, 0.54);
 
-  border: 1px solid rgba(variables.$white, 0.32);
+  border: 1px solid rgba(variables.$seiska-yellow, 0.32);
   border-radius: 4px;
 
   transition: border 0.1s ease, background 0.1s ease;
@@ -39,6 +48,9 @@
     border-color: variables.$white;
     outline: none;
   }
+  @include responsive.mobile-only() {
+      font-size: 14px;
+  }
 }
 
 .clearButton {
@@ -49,5 +61,8 @@
   > svg {
     width: 18px;
     height: 18px;
+  }
+  @include responsive.mobile-only() {
+    top: -6px;
   }
 }
