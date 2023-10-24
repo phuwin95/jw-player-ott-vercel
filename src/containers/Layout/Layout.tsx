@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { Outlet, useLocation, useNavigate } from 'react-router';
@@ -19,6 +19,7 @@ import Sidebar from '#components/Sidebar/Sidebar';
 import MenuButton from '#components/MenuButton/MenuButton';
 import UserMenu from '#components/UserMenu/UserMenu';
 import { addQueryParam } from '#src/utils/location';
+import { getSupportedLanguages } from '#src/i18n/config';
 import { useProfileStore } from '#src/stores/ProfileStore';
 import { unpersistProfile, useProfiles } from '#src/hooks/useProfiles';
 import { IS_DEVELOPMENT_BUILD } from '#src/utils/common';
@@ -26,13 +27,15 @@ import { IS_DEVELOPMENT_BUILD } from '#src/utils/common';
 const Layout = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { t } = useTranslation('common');
+  const { t, i18n } = useTranslation('common');
   const { config, accessModel } = useConfigStore(({ config, accessModel }) => ({ config, accessModel }), shallow);
-  const { menu, assets, siteName, description, styling, features } = config;
+  const { menu, /* assets */ siteName, description, styling, features } = config;
   const metaDescription = description || t('default_description');
   const { clientId } = useClientIntegration();
   const { searchPlaylist } = features || {};
   const { footerText } = styling || {};
+  const supportedLanguages = useMemo(() => getSupportedLanguages(), []);
+  const currentLanguage = useMemo(() => supportedLanguages.find(({ code }) => code === i18n.language), [i18n.language, supportedLanguages]);
 
   const { data: { responseData: { collection: profiles = [] } = {} } = {}, profilesEnabled } = useProfiles();
 
@@ -40,7 +43,7 @@ const Layout = () => {
     unpersistProfile();
   }
 
-  const { searchQuery, searchActive, userMenuOpen } = useUIStore(
+  const { searchQuery, searchActive, userMenuOpen, languageMenuOpen } = useUIStore(
     ({ searchQuery, searchActive, userMenuOpen, languageMenuOpen }) => ({
       languageMenuOpen,
       searchQuery,
@@ -56,7 +59,7 @@ const Layout = () => {
   const searchInputRef = useRef<HTMLInputElement>(null) as React.MutableRefObject<HTMLInputElement>;
 
   const [sideBarOpen, setSideBarOpen] = useState(false);
-  const banner = assets.banner;
+  //const banner = assets.banner;
 
   useEffect(() => {
     if (searchActive && searchInputRef.current) {
@@ -87,9 +90,15 @@ const Layout = () => {
     navigate(addQueryParam(location, 'u', 'create-account'));
   };
 
+  const languageClickHandler = async (code: string) => {
+    await i18n.changeLanguage(code);
+  };
+
   // useCallbacks are used here to fix a bug in the Popover when using a Reactive onClose callback
   const openUserMenu = useCallback(() => useUIStore.setState({ userMenuOpen: true }), []);
   const closeUserMenu = useCallback(() => useUIStore.setState({ userMenuOpen: false }), []);
+  const openLanguageMenu = useCallback(() => useUIStore.setState({ languageMenuOpen: true }), []);
+  const closeLanguageMenu = useCallback(() => useUIStore.setState({ languageMenuOpen: false }), []);
 
   const renderUserActions = () => {
     if (!clientId) return null;
@@ -117,7 +126,7 @@ const Layout = () => {
       <div className={styles.main}>
         <Header
           onMenuButtonClick={() => setSideBarOpen(true)}
-          logoSrc={banner}
+          //logoSrc={banner} //disabling logo since we don't want to display it
           searchEnabled={!!searchPlaylist}
           searchBarProps={{
             query: searchQuery,
@@ -130,10 +139,16 @@ const Layout = () => {
           onCloseSearchButtonClick={closeSearchButtonClickHandler}
           onLoginButtonClick={loginButtonClickHandler}
           onSignUpButtonClick={signUpButtonClickHandler}
+          onLanguageClick={languageClickHandler}
+          supportedLanguages={supportedLanguages}
+          currentLanguage={currentLanguage}
           isLoggedIn={isLoggedIn}
           userMenuOpen={userMenuOpen}
+          languageMenuOpen={languageMenuOpen}
           openUserMenu={openUserMenu}
           closeUserMenu={closeUserMenu}
+          openLanguageMenu={openLanguageMenu}
+          closeLanguageMenu={closeLanguageMenu}
           canLogin={!!clientId}
           showPaymentsMenuItem={accessModel !== 'AVOD'}
           currentProfile={profile ?? undefined}
