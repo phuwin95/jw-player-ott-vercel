@@ -43,14 +43,16 @@ const VideoDetails: React.FC<Props> = ({
   const query = new URLSearchParams(search);
   const isEpisode = Boolean(query.get('e'));
 
+  const videoType = isEpisode ? 'episode' : 'series';
+
   return (
     <div data-testid={testId('cinema-layout')}>
       <div className={styles.video} data-testid={testId('video-details')}>
-        <div className={classNames(styles.main, styles.mainPadding)}>
-          <figure className={styles.seriesGradient}>
-            <Image className={isEpisode ? styles.posterEpisode : styles.posterSeries} image={image} alt={title} width={1280} />
+        <div className={classNames(styles.main)}>
+          <figure data-type={videoType} className={styles.imageContainer}>
+            <Image className={styles.poster} image={image} alt={title} width={1280} />
           </figure>
-          <div className={classNames(isEpisode ? styles.infoEpisode : styles.infoSeries)}>
+          <div className={classNames(isEpisode ? styles.infoEpisode : styles.infoSeries, styles.mainPadding)}>
             <h2 className={classNames(styles.title, isEpisode ? styles.episode : styles.series)}>{title}</h2>
             <div className={styles.metaContainer}>
               <div className={styles.primaryMetadata}>{primaryMetadata}</div>
