@@ -14,14 +14,14 @@ export type LanguageDefinition = {
 // To enable the language, make sure that the language code is added to the `APP_ENABLED_LANGUAGES` environment variable
 // Before adding a defined language, ensure that the translation files are added to the `./public/locales/${code}` folder
 export const DEFINED_LANGUAGES: LanguageDefinition[] = [
-  {
-    code: 'en',
-    displayName: 'English',
-  },
-  {
-    code: 'es',
-    displayName: 'Español',
-  },
+  // {
+  //   code: 'en',
+  //   displayName: 'English',
+  // },
+  // {
+  //   code: 'es',
+  //   displayName: 'Español',
+  // },
   {
     code: 'fi',
     displayName: 'Suomi',
