@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import { useLocation } from 'react-router';
 
 import styles from './VideoDetails.module.scss';
 
@@ -19,9 +20,10 @@ type Props = {
   favoriteButton?: React.ReactNode;
   trailerButton?: React.ReactNode;
   children: React.ReactNode;
+  // type?: string;
 };
 
-const VideoDetails: React.VFC<Props> = ({
+const VideoDetails: React.FC<Props> = ({
   title,
   description,
   primaryMetadata,
@@ -32,24 +34,30 @@ const VideoDetails: React.VFC<Props> = ({
   favoriteButton,
   trailerButton,
   children,
+  // type,
 }) => {
   const breakpoint: Breakpoint = useBreakpoint();
   const isMobile = breakpoint === Breakpoint.xs;
+
+  const { search } = useLocation();
+  const query = new URLSearchParams(search);
+  const isEpisode = Boolean(query.get('e'));
 
   return (
     <div data-testid={testId('cinema-layout')}>
       <div className={styles.video} data-testid={testId('video-details')}>
         <div className={classNames(styles.main, styles.mainPadding)}>
-          <Image className={styles.poster} image={image} alt={title} width={1280} />
-          <div className={styles.info}>
-            <h2 className={styles.title}>{title}</h2>
+          <figure className={styles.seriesGradient}>
+            <Image className={isEpisode ? styles.posterEpisode : styles.posterSeries} image={image} alt={title} width={1280} />
+          </figure>
+          <div className={classNames(isEpisode ? styles.infoEpisode : styles.infoSeries)}>
+            <h2 className={classNames(styles.title, isEpisode ? styles.episode : styles.series)}>{title}</h2>
             <div className={styles.metaContainer}>
               <div className={styles.primaryMetadata}>{primaryMetadata}</div>
               {secondaryMetadata && <div className={styles.secondaryMetadata}>{secondaryMetadata}</div>}
             </div>
             <CollapsibleText text={description} className={styles.description} maxHeight={isMobile ? 60 : 'none'} />
-
-            <div className={styles.buttonBar}>
+            <div className={classNames(isEpisode ? styles.buttonBarEpisode : styles.buttonBarSeries)}>
               {startWatchingButton}
               {trailerButton}
               {favoriteButton}
