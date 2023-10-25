@@ -146,5 +146,6 @@
     "codeceptjs/**/minimatch": "^3.0.5",
     "flat": "^5.0.1",
     "json5": "^2.2.2"
-  }
+  },
+  "packageManager": "yarn@1.22.19"
 }
