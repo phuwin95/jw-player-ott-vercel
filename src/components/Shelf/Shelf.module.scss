@@ -19,11 +19,14 @@
   margin-bottom: 12px;
   overflow: hidden;
   color: var(--card-color);
-  font-family: var(--body-alt-font-family);
+  font-family: var(--body-title-font-family);
   font-weight: var(--body-font-weight-bold);
-  font-size: 24px;
+  font-size: 25px;
+  font-style: normal;
+  line-height: 1.15;
   white-space: nowrap;
   text-overflow: ellipsis;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.76);
 }
 
 .chevron {
