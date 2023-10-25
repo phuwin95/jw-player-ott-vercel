@@ -38,7 +38,7 @@
       text-shadow: 0 4px 4px rgba(0, 0, 0, 0.76);
       @include responsive.mobile-only {
         font-size: 25px;
-        line-height: 115%;
+        line-height: 1.15;
       }
     }
 
