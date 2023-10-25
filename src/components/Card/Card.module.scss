@@ -30,16 +30,15 @@
     .title {
       height: 1.1em;
       padding-right: 8px;
-      font-family: var(--body-font-family);
+      font-family: var(--body-title-font-family);
       font-size: 34px;
       line-height: 36px;
       white-space: nowrap;
       text-overflow: ellipsis;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.2);
-
+      text-shadow: 0 4px 4px rgba(0, 0, 0, 0.76);
       @include responsive.mobile-only {
-        font-size: 24px;
-        line-height: 26px;
+        font-size: 25px;
+        line-height: 1.15;
       }
     }
 
