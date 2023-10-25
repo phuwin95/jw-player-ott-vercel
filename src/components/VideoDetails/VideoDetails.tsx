@@ -48,18 +48,18 @@ const VideoDetails: React.FC<Props> = ({
   return (
     <div data-testid={testId('cinema-layout')}>
       <div className={styles.video} data-testid={testId('video-details')}>
-        <div className={classNames(styles.main)}>
-          <figure data-type={videoType} className={styles.imageContainer}>
-            <Image className={styles.poster} image={image} alt={title} width={1280} />
-          </figure>
-          <div className={classNames(isEpisode ? styles.infoEpisode : styles.infoSeries, styles.mainPadding)}>
-            <h2 className={classNames(styles.title, isEpisode ? styles.episode : styles.series)}>{title}</h2>
+        <div className={classNames(styles.main, styles.mainPadding)}>
+          <div data-type={videoType}>
+            <Image className={classNames(styles.poster, { [styles.episode]: isEpisode, [styles.series]: !isEpisode })} image={image} alt={title} width={1280} />
+          </div>
+          <div className={classNames({ [styles.infoEpisode]: isEpisode, [styles.infoSeries]: !isEpisode })}>
+            <h2 className={classNames(styles.title, { [styles.episode]: isEpisode, [styles.series]: !isEpisode })}>{title}</h2>
             <div className={styles.metaContainer}>
               <div className={styles.primaryMetadata}>{primaryMetadata}</div>
               {secondaryMetadata && <div className={styles.secondaryMetadata}>{secondaryMetadata}</div>}
             </div>
             <CollapsibleText text={description} className={styles.description} maxHeight={isMobile ? 60 : 'none'} />
-            <div className={classNames(isEpisode ? styles.buttonBarEpisode : styles.buttonBarSeries)}>
+            <div className={classNames(styles.buttonBar, { [styles.episode]: isEpisode, [styles.series]: !isEpisode })}>
               {startWatchingButton}
               {trailerButton}
               {favoriteButton}
