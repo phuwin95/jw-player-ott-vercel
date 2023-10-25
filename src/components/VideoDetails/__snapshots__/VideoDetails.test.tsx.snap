@@ -10,20 +10,19 @@ exports[`<VideoDetails> > renders and matches snapshot 1`] = `
       data-testid="video-details"
     >
       <div
-        class="_main_d0c133"
+        class="_main_d0c133 _mainPadding_d0c133"
       >
-        <figure
-          class="_imageContainer_d0c133"
+        <div
           data-type="series"
         >
           <img
             alt="Test video"
-            class="_poster_d0c133 _image_4c41c3"
+            class="_poster_d0c133 _series_d0c133 _image_4c41c3"
             src="http://image.jpg?width=1280"
           />
-        </figure>
+        </div>
         <div
-          class="_mainPadding_d0c133"
+          class="_infoSeries_d0c133"
         >
           <h2
             class="_title_d0c133 _series_d0c133"
@@ -57,7 +56,7 @@ exports[`<VideoDetails> > renders and matches snapshot 1`] = `
             </div>
           </div>
           <div
-            class="_buttonBarSeries_d0c133"
+            class="_buttonBar_d0c133 _series_d0c133"
           >
             <button>
               Start watching
