@@ -40,7 +40,7 @@
     font-family: var(--body-title-font-family);
     font-weight: var(--body-font-weight-bold);
     font-size: 30px;
-    line-height: 115%;
+    line-height: 1.15;
   }
 
   @include responsive.mobile-and-tablet {
