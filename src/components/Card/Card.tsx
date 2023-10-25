@@ -69,7 +69,7 @@ function Card({
     if (loading || disabled || !title) return null;
 
     if (isSeriesItem) {
-      return <div className={styles.tag}>Series</div>;
+      return <div className={styles.tag}>{t('series')}</div>;
     } else if (episodeNumber) {
       return <div className={styles.tag}>{formatSeriesMetaString(seasonNumber, episodeNumber)}</div>;
     } else if (duration) {

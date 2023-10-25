@@ -83,6 +83,10 @@ export default ({ mode, command }: ConfigEnv): UserConfigExport => {
     envPrefix: 'APP_',
     server: {
       port: 8080,
+      host: true,
+      watch: {
+        usePolling: true,
+      },
     },
     mode: mode,
     build: {
