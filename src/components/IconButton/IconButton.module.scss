@@ -2,11 +2,12 @@
 @use 'src/styles/theme';
 
 .iconButton {
-  display: inline-flex;
+  // display: inline-flex;
+  position: relative;
   justify-content: center;
   align-items: center;
   width: 40px;
-  height: 40px;
+  height: 0;
   outline: var(--highlight-color, white) none;
 
   cursor: pointer;
