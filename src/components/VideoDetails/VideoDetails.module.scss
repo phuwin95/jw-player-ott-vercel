@@ -214,6 +214,7 @@
   background-position: center center;
   background-size: cover;
 
+  -webkit-mask-image: linear-gradient(to right, transparent 15%, #141523 75%), linear-gradient(to top, transparent 15%, #141523 75%);
   -webkit-mask-size: 110% 110%;
   -webkit-mask-position: center;
   -webkit-mask-composite: source-in;
@@ -229,7 +230,6 @@
     background-repeat: no-repeat;
     // fix for Safari (poster will render below the dynamic blur)
     transform: translateZ(0);
-    -webkit-mask-image: linear-gradient(to right, transparent 15%, #141523 75%), linear-gradient(to top, transparent 15%, #141523 75%);
 
     @include responsive.tablet-only() {
       height: calc(140vw / 16 * 9);
@@ -249,8 +249,6 @@
     background-repeat: no-repeat;
     transform: scale(1.1);
     transform-origin: bottom left;
-
-    -webkit-mask-image: linear-gradient(to top, transparent 15%, #141523 75%);
 
     &:is([data-type='series']) {
       transform: scale(1.1);
