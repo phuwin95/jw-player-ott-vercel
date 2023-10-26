@@ -62,8 +62,7 @@
 }
 
 .infoSeries {
-  display: inline !important;
-  padding-top: 1px !important;
+  padding-top: 90px !important;
 
   @include responsive.mobile-only() {
     width: 100%;
@@ -156,7 +155,7 @@
     }
 
     @include responsive.mobile-only() {
-      padding-top: 100px;
+      padding-top: 50px;
     }
   }
 
