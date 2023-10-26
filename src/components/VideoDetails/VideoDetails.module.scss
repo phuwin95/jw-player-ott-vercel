@@ -44,6 +44,7 @@
 .infoEpisode {
   width: 70%;
   max-width: 650px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.76);
 
   @include responsive.desktop-small-only() {
     min-height: 335px;
@@ -63,6 +64,7 @@
 
 .infoSeries {
   padding-top: 90px !important;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.76);
 
   @include responsive.mobile-only() {
     width: 100%;
@@ -75,7 +77,6 @@
   font-weight: 700;
   font-style: normal;
   line-height: 1.15;
-  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.76);
 
   &.episode {
     font-size: 25px !important;
