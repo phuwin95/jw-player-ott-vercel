@@ -1,8 +1,8 @@
 // import LinkNext from 'next/link';
 import React from 'react';
-import styled from 'styled-components';
+import styld from 'styled-components';
 
-const StyledA = styled.a<{ textDecoration: boolean }>`
+const StyledA = styld.a<{ textDecoration: boolean }>`
   text-decoration: none;
   cursor: pointer;
   color: ${({ color, theme }) => color || theme.textColor};

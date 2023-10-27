@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styld from 'styled-components';
 
 import Button, { ButtonProps } from './Button';
 import MobileMenuItem from './MobileMenuItem';
@@ -7,7 +7,7 @@ import CollapsibleItem from './CollapsibleItem';
 
 import { KATEGORY_MENU_ITEMS, KATSO_MENU_ITEMS, SETTING_MENU_ITEMS } from '#src/utils/constants';
 
-const StyledContainer = styled.div`
+const StyledContainer = styld.div`
   background-color: ${({ theme }) => theme.background};
   height: 100%;
   width: 100%;
@@ -15,7 +15,7 @@ const StyledContainer = styled.div`
   padding-top: 5px;
 `;
 
-const StyledList = styled.ul`
+const StyledList = styld.ul`
   list-style: none;
   margin: 0;
   padding: 0;
@@ -48,13 +48,13 @@ const StyledList = styled.ul`
     }`}
 `;
 
-const StyledItem = styled.li`
+const StyledItem = styld.li`
   list-style: none;
   margin: 0;
   padding: 0;
 `;
 
-const StyledButtonContainer = styled.div`
+const StyledButtonContainer = styld.div`
   display: grid;
   grid-auto-flow: row dense;
   grid-template-columns: 1fr 1fr;
@@ -68,7 +68,7 @@ const StyledButtonContainer = styled.div`
   width: 100%;
 `;
 
-const StyledButton = styled(Button)<ButtonProps & { gridArea: string }>`
+const StyledButton = styld(Button)<ButtonProps & { gridArea: string }>`
   padding: 20px 10px;
   grid-area: ${({ gridArea }) => gridArea};
 `;
@@ -95,7 +95,7 @@ const MobileMenu = () => {
         ))}
         <StyledItem onClick={scrollToBottom}>
           <CollapsibleItem title="Katso">
-            <MobileMenuItem href="/katso" title="Etusivu" newTab />
+            <MobileMenuItem href="https://www.seiska.fi/katso" title="Etusivu" newTab />
             {KATSO_MENU_ITEMS?.map && KATSO_MENU_ITEMS.map(({ url, title }) => <MobileMenuItem key={title + url} href={url} title={title} newTab />)}
           </CollapsibleItem>
         </StyledItem>

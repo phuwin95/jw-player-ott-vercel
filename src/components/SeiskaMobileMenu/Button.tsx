@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import styled from 'styled-components';
+import styld from 'styled-components';
 
 import Link from './NextLink';
 
@@ -180,7 +180,7 @@ const ButtonEl = (props: ButtonElProps) => {
   );
 };
 
-const Button = styled(ButtonEl)<ButtonProps>`
+const Button = styld(ButtonEl)<ButtonProps>`
   display: inline-block;
   text-align: center;
   vertical-align: middle;

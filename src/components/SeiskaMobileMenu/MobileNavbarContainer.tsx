@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import styld from 'styled-components';
 
 import { breakpoints } from '#src/utils/constants';
 
-const StyledMobileNavBarMenu = styled.div<{ isMenuOpen: boolean }>`
+const StyledMobileNavBarMenu = styld.div<{ isMenuOpen: boolean }>`
   position: absolute;
   top: 56px;
   left: 0;

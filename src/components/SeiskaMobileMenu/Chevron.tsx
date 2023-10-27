@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styld from 'styled-components';
 
-const ChevronUp = styled.span`
+const ChevronUp = styld.span`
   border-style: solid;
   border-width: 3px 3px 0 0;
   display: inline-block;
@@ -11,7 +11,7 @@ const ChevronUp = styled.span`
 `;
 
 // create a chevron down component using css
-const ChevronDown = styled(ChevronUp)`
+const ChevronDown = styld(ChevronUp)`
   transform: rotate(135deg);
 `;
 

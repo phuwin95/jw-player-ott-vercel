@@ -1,29 +1,29 @@
 import React from 'react';
-import styled from 'styled-components';
+import styld from 'styled-components';
 import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion';
 
 import { ChevronUp, ChevronDown } from './Chevron';
 import { MobileMenuItemCss } from './MobileMenuItem';
 
-const StyledChevronUp = styled(ChevronUp)`
+const StyledChevronUp = styld(ChevronUp)`
   right: 30px;
   top: 23px;
   position: absolute;
 `;
 
-const StyledChevronDown = styled(ChevronDown)`
+const StyledChevronDown = styld(ChevronDown)`
   top: 13px;
   right: 30px;
   position: absolute;
 `;
 
-const StyledItem = styled(AccordionItemButton)<{ bold: string | boolean }>`
+const StyledItem = styld(AccordionItemButton)<{ bold: string | boolean }>`
   ${MobileMenuItemCss}
   cursor: pointer;
   position: relative;
 `;
 
-const StyledPanel = styled(AccordionItemPanel)`
+const StyledPanel = styld(AccordionItemPanel)`
   background-color: ${(props) => props.theme.background};
 `;
 
