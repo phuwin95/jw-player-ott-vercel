@@ -147,17 +147,27 @@ $aspects: ((1, 1), (2, 1), (2, 3), (4, 3), (5, 3), (16, 9), (9, 16), (9, 13));
   overflow: hidden;
   color: var(--card-color);
   font-family: var(--body-alt-font-family);
-  font-weight: var(--body-font-weight-bold);
-  font-size: 1em;
+  font-weight: 600px;
+  font-size: 0.875rem;
+  font-style: normal;
   line-height: 1.2em;
+  line-height: 1.2;
+  letter-spacing: -0.28px;
   text-align: left;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);
+  // text-shadow: 0 2px 4px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);
 
   &.loading {
     width: 30%;
     height: 16px;
     background-color: theme.$card-loading-bg-color;
     border-radius: 5px;
+  }
+
+  @include responsive.desktop-only {
+    font-weight: 700px;
+    line-height: 1.25;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   @include responsive.mobile-only {
@@ -173,7 +183,6 @@ $aspects: ((1, 1), (2, 1), (2, 3), (4, 3), (5, 3), (16, 9), (9, 16), (9, 13));
     font-size: 12px;
   }
 }
-
 
 .meta {
   position: absolute;
