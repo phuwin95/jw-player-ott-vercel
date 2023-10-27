@@ -20,6 +20,7 @@ const BASE_URL = 'https://www.seiska.fi';
  */
 export const NAVBAR_MENU_ITEMS: Item[] = [
   { title: 'Etusivu', url: BASE_URL + '/', internal: true, hideOnCategoryMenu: true },
+  { title: 'Vain Seiskassa', url: BASE_URL + '/vain-seiskassa', internal: true }, // Uutiset
   { title: 'Kotimaa', url: BASE_URL + '/kotimaa', internal: true }, // Uutiset
   { title: 'Ulkomaat', url: BASE_URL + '/ulkomaat', internal: true }, // Oho + HLLWD
   { title: 'Kuninkaalliset', url: BASE_URL + '/kuninkaalliset', internal: true },
