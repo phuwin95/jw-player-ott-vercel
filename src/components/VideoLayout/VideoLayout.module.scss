@@ -117,10 +117,10 @@
 
 .relatedVideosGridTitle {
   margin-right: variables.$base-spacing;
-  font-family: var(--body-alt-font-family);
+  font-family: var(--body-title-font-family);
   font-weight: var(--body-font-weight-bold);
-  font-size: 24px;
-  line-height: 26px;
+  font-size: 26px;
+  line-height: 1.15;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);
 }
 
