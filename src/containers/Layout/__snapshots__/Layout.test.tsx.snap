@@ -120,6 +120,16 @@ exports[`<Layout /> > renders layout 1`] = `
               >
                 <a
                   class="sc-gtsqUy UBJb sc-hKFymg iJoBMj"
+                  href="https://www.seiska.fi/vain-seiskassa"
+                >
+                  Vain Seiskassa
+                </a>
+              </li>
+              <li
+                class="sc-iqAbyq bFPRki"
+              >
+                <a
+                  class="sc-gtsqUy UBJb sc-hKFymg iJoBMj"
                   href="https://www.seiska.fi/kotimaa"
                 >
                   Kotimaa
@@ -247,7 +257,7 @@ exports[`<Layout /> > renders layout 1`] = `
                     >
                       <a
                         class="sc-gtsqUy UBJb sc-hKFymg kUOFkD"
-                        href="/katso"
+                        href="https://www.seiska.fi/katso"
                         rel="noreferrer"
                         target="_blank"
                       >
