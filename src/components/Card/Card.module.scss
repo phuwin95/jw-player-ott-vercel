@@ -30,16 +30,15 @@
     .title {
       height: 1.1em;
       padding-right: 8px;
-      font-family: var(--body-font-family);
+      font-family: var(--body-title-font-family);
       font-size: 34px;
       line-height: 36px;
       white-space: nowrap;
       text-overflow: ellipsis;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.2);
-
+      text-shadow: 0 4px 4px rgba(0, 0, 0, 0.76);
       @include responsive.mobile-only {
-        font-size: 24px;
-        line-height: 26px;
+        font-size: 25px;
+        line-height: 1.15;
       }
     }
 
@@ -144,14 +143,18 @@ $aspects: ((1, 1), (2, 1), (2, 3), (4, 3), (5, 3), (16, 9), (9, 16), (9, 13));
 }
 
 .title {
-  height: 2.4em;
+  display: -webkit-box;
+  height: 36px;
   overflow: hidden;
   color: var(--card-color);
-  font-family: var(--body-alt-font-family);
+  font-family: var(--body-title-font-family);
   font-weight: var(--body-font-weight-bold);
-  font-size: 1em;
-  line-height: 1.2em;
-  text-align: left;
+  font-size: 16px;
+  line-height: 1.20;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-align: center;
+  text-overflow: ellipsis;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);
 
   &.loading {
@@ -159,10 +162,6 @@ $aspects: ((1, 1), (2, 1), (2, 3), (4, 3), (5, 3), (16, 9), (9, 16), (9, 13));
     height: 16px;
     background-color: theme.$card-loading-bg-color;
     border-radius: 5px;
-  }
-
-  @include responsive.mobile-only {
-    font-size: 14px;
   }
 }
 
@@ -174,7 +173,6 @@ $aspects: ((1, 1), (2, 1), (2, 3), (4, 3), (5, 3), (16, 9), (9, 16), (9, 13));
     font-size: 12px;
   }
 }
-
 
 .meta {
   position: absolute;
