@@ -49,7 +49,7 @@ exports[`<VideoDetails> > renders and matches snapshot 1`] = `
             </div>
           </div>
           <div
-            class="_buttonBar_d0c133 _series_d0c133"
+            class="_buttonBar_d0c133"
           >
             <button>
               Start watching
