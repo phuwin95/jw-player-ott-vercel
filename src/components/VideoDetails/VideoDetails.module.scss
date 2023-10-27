@@ -11,7 +11,7 @@
 }
 
 .mainPadding {
-  padding: 10px 56px 0;
+  padding: 0 56px 0;
 
   @include responsive.desktop-small-only() {
     padding: 5px 36px 36px;
@@ -37,44 +37,44 @@
   }
 
   @include responsive.desktop-only() {
-    padding-bottom: 100px;
+    padding-bottom: 20px;
   }
 }
 
 .infoEpisode {
-  width: 70%;
-  max-width: 650px;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.76);
 
-  @include responsive.desktop-small-only() {
+  @include responsive.desktop-only() {
     min-height: 335px;
+    padding-top: 221px !important;
   }
 
   @include responsive.tablet-only() {
-    width: 350px;
     min-height: 335px;
+    padding-top: 221px !important;
   }
 
   @include responsive.mobile-only() {
     width: 100%;
     min-height: 380px;
-    padding-top: 150px;
+    padding-top: 231px;
   }
 }
 
 .infoSeries {
-  padding-top: 90px !important;
+  padding-top: 221px !important;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.76);
 
   @include responsive.mobile-only() {
     width: 100%;
+    padding-top: 136px !important;
   }
 }
 
 .title {
   @include typography.video-title-base;
   // margin-bottom: calc(#{variables.$base-spacing} / 2);
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 
   font-weight: 700;
   font-style: normal;
@@ -92,7 +92,9 @@
 .metaContainer {
   display: flex;
   flex-direction: column;
-  margin-top: 5px;
+  @include responsive.mobile-only() {
+    margin-top: 15px;
+  }
 }
 
 .primaryMetadata {
@@ -148,24 +150,8 @@
     justify-content: center;
   }
 
-  &.episode {
-    @include responsive.mobile-only() {
-      padding-top: 30px;
-    }
-  }
-
-  &.series {
-    @include responsive.tablet-only() {
-      padding-right: 50%;
-    }
-
-    @include responsive.mobile-only() {
-      padding-top: 50px;
-    }
-  }
-
   @include responsive.desktop-only() {
-    padding-top: 80px;
+    padding-top: 30px;
     > button {
       margin-right: 10px;
     }
@@ -185,6 +171,7 @@
   }
   @include responsive.tablet-only() {
     flex-wrap: wrap;
+    padding-right: 50%;
 
     > button {
       margin: 5px 0;
@@ -198,7 +185,7 @@
 
   @include responsive.mobile-only() {
     flex-wrap: wrap;
-    padding-top: 30px;
+    margin-top: 50px;
 
     > button:first-child {
       margin-bottom: 8px;
