@@ -37,13 +37,6 @@ exports[`<VideoDetails> > renders and matches snapshot 1`] = `
             >
               Primary metadata string
             </div>
-            <div
-              class="_secondaryMetadata_d0c133"
-            >
-              <strong>
-                Secondary metadata string
-              </strong>
-            </div>
           </div>
           <div
             class="_collapsibleText_561522"
