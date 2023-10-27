@@ -1,9 +1,11 @@
 import React, { ReactFragment, useState } from 'react';
 import classNames from 'classnames';
+import { ThemeProvider } from 'styled-components';
 import { useTranslation } from 'react-i18next';
 
 import styles from './Header.module.scss';
 
+import { darkTheme } from '#src/theme';
 import AccountCircle from '#src/icons/AccountCircle';
 import SearchBar, { Props as SearchBarProps } from '#components/SearchBar/SearchBar';
 import Logo from '#components/Logo/Logo';
@@ -22,6 +24,8 @@ import Panel from '#components/Panel/Panel';
 import type { Profile } from '#types/account';
 import ProfileCircle from '#src/icons/ProfileCircle';
 import type { AccessModel } from '#types/Config';
+import StyledMobileNavBarMenu from '#components/SeiskaMobileMenu/MobileNavbarContainer';
+import MobileMenu from '#components/SeiskaMobileMenu/MobileMenu';
 
 type TypeHeader = 'static' | 'fixed';
 
@@ -86,6 +90,11 @@ const Header: React.FC<Props> = ({
 }) => {
   const { t } = useTranslation('menu');
   const [logoLoaded, setLogoLoaded] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+    document.body.style.overflow = isMenuOpen ? 'auto' : 'hidden';
+  };
   const breakpoint = useBreakpoint();
   const headerClassName = classNames(styles.header, styles[headerType], {
     [styles.searchActive]: searchActive,
@@ -201,8 +210,16 @@ const Header: React.FC<Props> = ({
           {renderSearch()}
           {renderLanguageDropdown()}
           {renderUserActions()}
+          <IconButton className={classNames(styles.iconButton, styles.mobileOnly)} aria-label={t('open_menu')} onClick={toggleMenu}>
+            {isMenuOpen ? <CloseIcon /> : <Menu />}
+          </IconButton>
         </div>
       </div>
+      <ThemeProvider theme={darkTheme}>
+        <StyledMobileNavBarMenu isMenuOpen={isMenuOpen}>
+          <MobileMenu />
+        </StyledMobileNavBarMenu>
+      </ThemeProvider>
     </header>
   );
 };

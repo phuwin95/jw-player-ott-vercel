@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { KATEGORY_MENU_ITEMS, KATSO_MENU_ITEMS, SETTING_MENU_ITEMS } from 'src/utils/constants';
 
 import Button, { ButtonProps } from './Button';
 import MobileMenuItem from './MobileMenuItem';
 import CollapsibleItem from './CollapsibleItem';
+
+import { KATEGORY_MENU_ITEMS, KATSO_MENU_ITEMS, SETTING_MENU_ITEMS } from '#src/utils/constants';
 
 const StyledContainer = styled.div`
   background-color: ${({ theme }) => theme.background};
@@ -39,9 +40,10 @@ const StyledList = styled.ul`
       position: absolute;
       left: 0;
       width: 100%;
-      height: 30px;
-      bottom: 171px;
+      height: 90px;
+      bottom: 170px;
       background: linear-gradient(0deg, ${theme.background} 0%, rgba(0,0,0,0) 100%);
+      pointer-events: none;
       // transform: rotate(180deg);
     }`}
 `;
@@ -75,8 +77,9 @@ const MobileMenu = () => {
   const listRef = React.useRef<HTMLUListElement>(null);
   const scrollToBottom = (e: React.MouseEvent<HTMLLIElement>) => {
     setTimeout(() => {
+      const target = e.target as HTMLElement;
       listRef.current?.scrollTo({
-        top: e.currentTarget.offsetTop,
+        top: target.offsetTop,
         behavior: 'smooth',
       });
     }, 100);
@@ -105,13 +108,13 @@ const MobileMenu = () => {
         </StyledItem>
       </StyledList>
       <StyledButtonContainer>
-        <StyledButton intent="green" gridArea="vinkkaa" href="/contact/user_tips" target="_blank" testId="user_tips_mobile" type="link">
+        <StyledButton intent="green" gridArea="vinkkaa" href="https://www.seiska.fi/contact/user_tips" target="_blank" testId="user_tips_mobile" type="link">
           Vinkkaa ja tienaa
         </StyledButton>
-        <StyledButton intent="primary" gridArea="tilaa" href="/button" target="_blank" rel="noopener noreferrer" type="link">
+        <StyledButton intent="primary" gridArea="tilaa" href="https://www.seiska.fi/button" target="_blank" rel="noopener noreferrer" type="link">
           Tilaa
         </StyledButton>
-        <StyledButton intent="blue" gridArea="digi" href="/verkkolehti" target="_blank" rel="noopener noreferrer" type="link">
+        <StyledButton intent="blue" gridArea="digi" href="https://www.seiska.fi/verkkolehti" target="_blank" rel="noopener noreferrer" type="link">
           Digilehti
         </StyledButton>
       </StyledButtonContainer>

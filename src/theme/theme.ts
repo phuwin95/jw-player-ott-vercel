@@ -1,4 +1,4 @@
-import { Colors, ThemeInterface } from '@/types/theme';
+import type { Colors, ThemeInterface } from '#types/theme';
 
 const colors: Colors = {
   seiskaRed: '#EC1C24',
@@ -248,7 +248,7 @@ export const darkTheme: ThemeInterface = {
   katsoPalette: {
     ...theme.katsoPalette,
     primary: {
-      ...theme.katsoPalette.primary,
+      ...theme.katsoPalette?.primary,
       main: darkColors.katsoViolet,
       underBgColor: darkColors.katsoSheerwhite,
       textColor: darkColors.white,

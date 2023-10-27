@@ -60,6 +60,14 @@
   }
 }
 
+.mobileOnly {
+  
+  @include responsive.desktop-only() {
+    display: none;
+  }
+}
+
+
 //
 // Header brand
 //
