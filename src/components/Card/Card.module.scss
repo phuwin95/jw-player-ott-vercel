@@ -166,7 +166,6 @@ $aspects: ((1, 1), (2, 1), (2, 3), (4, 3), (5, 3), (16, 9), (9, 16), (9, 13));
   @include responsive.desktop-only {
     font-weight: 700px;
     line-height: 1.25;
-    white-space: nowrap;
     text-overflow: ellipsis;
   }
 
