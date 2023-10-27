@@ -73,7 +73,9 @@
 
 .title {
   @include typography.video-title-base;
-  margin-bottom: calc(#{variables.$base-spacing} / 2);
+  // margin-bottom: calc(#{variables.$base-spacing} / 2);
+  margin-bottom: 10px;
+
   font-weight: 700;
   font-style: normal;
   line-height: 1.15;
@@ -90,13 +92,14 @@
 .metaContainer {
   display: flex;
   flex-direction: column;
+  margin-top: 5px;
 }
 
 .primaryMetadata {
   display: flex;
   align-items: center;
-  margin-top: 6px;
-  margin-bottom: 6px;
+  margin-top: 5px;
+  margin-bottom: 10px;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.2;
@@ -108,23 +111,24 @@
 
   @include responsive.mobile-only() {
     order: 2;
+    margin-top: 0;
     font-size: 14px;
   }
 }
 
-.secondaryMetadata {
-  margin-top: 8px;
-  margin-bottom: 8px;
-  font-size: 20px;
-  line-height: 20px;
-  letter-spacing: 0.5px;
+// .secondaryMetadata {
+//   margin-top: 8px;
+//   margin-bottom: 8px;
+//   font-size: 20px;
+//   line-height: 20px;
+//   letter-spacing: 0.5px;
 
-  @include responsive.mobile-only() {
-    order: 1;
-    margin: 4px 0;
-    font-size: 18px;
-  }
-}
+//   @include responsive.mobile-only() {
+//     order: 1;
+//     margin: 4px 0;
+//     font-size: 18px;
+//   }
+// }
 
 .description {
   min-height: 21px;
