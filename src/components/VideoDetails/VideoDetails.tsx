@@ -64,11 +64,7 @@ const VideoDetails: React.FC<Props> = ({
               {secondaryMetadata && isEpisode ? episodeTitle : title}
             </h2>
             <div className={styles.metaContainer}>
-              {primaryMetadata && isEpisode ? (
-                <div className={styles.primaryMetadata}>{makeEpisodeSubtitle(title, primaryMetadata as string)}</div>
-              ) : (
-                <div className={styles.primaryMetadata}>{primaryMetadata}</div>
-              )}
+              <div className={styles.primaryMetadata}>{isEpisode ? makeEpisodeSubtitle(title, primaryMetadata as string) : primaryMetadata}</div>
             </div>
             <CollapsibleText text={description} className={styles.description} maxHeight={isMobile ? 60 : 'none'} />
             <div className={classNames(styles.buttonBar)}>
