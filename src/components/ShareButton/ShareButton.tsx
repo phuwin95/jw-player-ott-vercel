@@ -28,13 +28,7 @@ const ShareButton = ({ title, description, url }: Props) => {
   };
 
   return (
-    <Button
-      label={hasShared ? t('video:copied_url') : t('video:share')}
-      // startIcon={hasShared ? <Check /> : <Share />}
-      onClick={onShareClick}
-      active={hasShared}
-      fullWidth={breakpoint < Breakpoint.md}
-    />
+    <Button label={hasShared ? t('video:copied_url') : t('video:share')} onClick={onShareClick} active={hasShared} fullWidth={breakpoint < Breakpoint.md} />
   );
 };
 
