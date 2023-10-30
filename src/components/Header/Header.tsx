@@ -8,8 +8,6 @@ import AccountCircle from '#src/icons/AccountCircle';
 import SearchBar, { Props as SearchBarProps } from '#components/SearchBar/SearchBar';
 import Logo from '#components/Logo/Logo';
 import Menu from '#src/icons/Menu';
-import SearchIcon from '#src/icons/Search';
-import CloseIcon from '#src/icons/Close';
 import Button from '#components/Button/Button';
 import Popover from '#components/Popover/Popover';
 import UserMenu from '#components/UserMenu/UserMenu';
@@ -27,13 +25,9 @@ type TypeHeader = 'static' | 'fixed';
 
 type Props = {
   headerType?: TypeHeader;
-  onMenuButtonClick: () => void;
   logoSrc?: string | null;
   searchBarProps: SearchBarProps;
   searchEnabled: boolean;
-  searchActive: boolean;
-  onSearchButtonClick?: () => void;
-  onCloseSearchButtonClick?: () => void;
   onLoginButtonClick?: () => void;
   onSignUpButtonClick?: () => void;
   openUserMenu: () => void;
@@ -57,14 +51,10 @@ type Props = {
 
 const Header: React.FC<Props> = ({
   children,
-  onMenuButtonClick,
   logoSrc,
   searchBarProps,
-  searchActive,
-  onSearchButtonClick,
   searchEnabled,
   onLoginButtonClick,
-  onCloseSearchButtonClick,
   onSignUpButtonClick,
   isLoggedIn,
   userMenuOpen,
@@ -93,10 +83,10 @@ const Header: React.FC<Props> = ({
   const renderSearch = () => {
     if (!searchEnabled) return null;
 
-    return searchActive ? (
+    return (
       <div className={styles.searchContainer}>
         <SearchBar {...searchBarProps} />
-        <IconButton
+        {/* <IconButton
           className={styles.iconButton}
           aria-label="Close search"
           onClick={() => {
@@ -106,20 +96,8 @@ const Header: React.FC<Props> = ({
           }}
         >
           <CloseIcon />
-        </IconButton>
+        </IconButton> */}
       </div>
-    ) : (
-      <IconButton
-        className={classNames(styles.iconButton, styles.actionButton)}
-        aria-label="Open search"
-        onClick={() => {
-          if (onSearchButtonClick) {
-            onSearchButtonClick();
-          }
-        }}
-      >
-        <SearchIcon />
-      </IconButton>
     );
   };
 
@@ -180,9 +158,9 @@ const Header: React.FC<Props> = ({
   return (
     <header className={styles.container}>
       <div className={styles.menu}>
-        <IconButton className={styles.iconButton} aria-label={t('open_menu')} onClick={onMenuButtonClick}>
+        <a href="/p/gRb8jEQx" aria-label="all-series">
           <Menu />
-        </IconButton>
+        </a>
       </div>
       {logoSrc && (
         <div className={styles.brand}>

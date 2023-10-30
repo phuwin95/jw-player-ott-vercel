@@ -67,20 +67,20 @@ const Layout = () => {
     }
   }, [searchActive]);
 
-  const searchButtonClickHandler = () => {
-    useUIStore.setState({
-      searchActive: true,
-      preSearchPage: location,
-    });
-  };
+  // const searchButtonClickHandler = () => {
+  //   useUIStore.setState({
+  //     searchActive: true,
+  //     preSearchPage: location,
+  //   });
+  // };
 
-  const closeSearchButtonClickHandler = () => {
-    resetSearchQuery();
+  // const closeSearchButtonClickHandler = () => {
+  //   resetSearchQuery();
 
-    useUIStore.setState({
-      searchActive: false,
-    });
-  };
+  //   useUIStore.setState({
+  //     searchActive: false,
+  //   });
+  // };
 
   const loginButtonClickHandler = () => {
     navigate(addQueryParam(location, 'u', 'login'));
@@ -125,18 +125,18 @@ const Layout = () => {
       </Helmet>
       <div className={styles.main}>
         <Header
-          onMenuButtonClick={() => setSideBarOpen(true)}
+          // onMenuButtonClick={() => setSideBarOpen(true)}
           //logoSrc={banner} //disabling logo since we don't want to display it
           searchEnabled={!!searchPlaylist}
           searchBarProps={{
             query: searchQuery,
             onQueryChange: (event) => updateSearchQuery(event.target.value),
-            onClearButtonClick: () => updateSearchQuery(''),
+            onClearButtonClick: () => resetSearchQuery(),
             inputRef: searchInputRef,
           }}
-          searchActive={searchActive}
-          onSearchButtonClick={searchButtonClickHandler}
-          onCloseSearchButtonClick={closeSearchButtonClickHandler}
+          // searchActive={searchActive}
+          // onSearchButtonClick={searchButtonClickHandler}
+          // onCloseSearchButtonClick={closeSearchButtonClickHandler}
           onLoginButtonClick={loginButtonClickHandler}
           onSignUpButtonClick={signUpButtonClickHandler}
           onLanguageClick={languageClickHandler}
@@ -156,7 +156,7 @@ const Layout = () => {
           profilesEnabled={profilesEnabled}
           accessModel={accessModel}
         >
-          <Button label={t('home')} to="/" variant="text" />
+          {/* <Button label={t('home')} to="/" variant="text" /> */}
           {menu.map((item) => (
             <Button key={item.contentId} label={item.label} to={`/p/${item.contentId}`} variant="text" />
           ))}
