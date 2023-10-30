@@ -7,14 +7,13 @@
 // Header container
 //
 .container {
-  position: absolute;
-  z-index: 1;
   display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 31px;
-  margin-top: 12px;
+  justify-content: center;
+  align-items: center;
+  height: 51px;
+  padding: 10px 0 0;
   color: variables.$seiska-yellow;
+  text-align: center;
 }
 
 //
@@ -25,29 +24,26 @@
 }
 
 //
-// Header brand
+// Header brand/logo
 //
-.brand {
-  align-self: center;
-  margin-right: variables.$base-spacing;
-}
+// .brand {
+//   align-self: center;
+//   margin-right: variables.$base-spacing;
+// }
 
 //
 // Header navigation
 //
 .nav {
-  display: inline-block;
-  flex: 1;
-  align-items: center;
-  margin-left: 20px;
-
   > a {
-    height: 36px;
-    min-height: 36px;
-    margin: 0 6px;
+    height: 22px;
+    min-height: 22px;
+    margin: 0 31px 0 0;
     padding: 0 calc(#{variables.$base-spacing} / 2);
     font-weight: var(--body-font-weight-bold);
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 1.20;
+    text-align: center;
   }
 }
 
@@ -57,24 +53,8 @@
 .actions {
   position: relative;
   display: flex;
-  margin-right: 20px;
-
-  @include responsive.mobile-and-tablet() {
-    // the search container wants to position itself against the header
-    position: static;
-  }
-}
-
-//
-// Header search container
-//
-.searchContainer {
-  display: flex;
-  width: variables.$search-bar-width-desktop;
-
-  > div:first-child {
-    flex: 1;
-  }
+  width: 169px;
+  height: 27px;
 }
 
 //
@@ -110,52 +90,68 @@
 // mediaQueries
 // --------------------------------
 
-@include responsive.mobile-and-tablet() {
-
-  .menu {
-    display: block;
-    margin-left: 20px;
-  }
-
-  .brand {
-    flex: 1;
-    margin-left: variables.$base-spacing;
-  }
-
-  .nav {
-    display: none;
-  }
-}
-
-@include  responsive.tablet-and-larger() {
+@include responsive.tablet-only() {
 
   .container {
     display: flex;
     justify-content: space-between;
   }
 
-  .buttonContainer {
+  .menu {
+    display: block;
+    margin: 4px 0 0 20px;
+    > a {
+      svg {
+        width: 31px;
+        height: 30px;
+      }
+    }
+  }
+
+  .nav {
     display: none;
   }
+
+  .searchContainer {
+    position: absolute;
+    left: -20px;
+    display: flex;
+    width: 169px;
+  }
+
 }
 
 @include responsive.mobile-only() {
 
+  .container {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 0.5fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    'menu search .'; // . is left for the seiska hamburger menu
+  }
+
   .menu {
-    width: 200px;
-    margin-left: 10px;
+    display: block;
+    grid-area: menu;
+    margin-top: 4px;
 
+    > a {
+      svg {
+        width: 31px;
+        height: 30px;
+      }
+    }
   }
+
+  .nav {
+    display: none;
+  }
+
   .actions {
-    width: 200px;
+    grid-area: search;
+    width: 169px;
+    justify-self: center;
   }
 
-  .actionButton {
-    position: absolute;
-    right: 10px;
-  }
-
-  .searchContainer {
-    margin-right: -10px;
-  }
 }
