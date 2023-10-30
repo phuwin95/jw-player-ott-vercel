@@ -22,7 +22,6 @@ type Props = {
   favoriteButton?: React.ReactNode;
   trailerButton?: React.ReactNode;
   children: React.ReactNode;
-  // type?: string;
 };
 
 const VideoDetails: React.FC<Props> = ({
@@ -36,7 +35,6 @@ const VideoDetails: React.FC<Props> = ({
   favoriteButton,
   trailerButton,
   children,
-  // type,
 }) => {
   const breakpoint: Breakpoint = useBreakpoint();
   const isMobile = breakpoint === Breakpoint.xs;
