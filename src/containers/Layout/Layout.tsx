@@ -125,7 +125,7 @@ const Layout = () => {
       </Helmet>
       <div className={styles.main}>
         <Header
-          // onMenuButtonClick={() => setSideBarOpen(true)}
+          onMenuButtonClick={() => setSideBarOpen(false)}
           //logoSrc={banner} //disabling logo since we don't want to display it
           searchEnabled={!!searchPlaylist}
           searchBarProps={{

@@ -26,6 +26,7 @@ type TypeHeader = 'static' | 'fixed';
 
 type Props = {
   headerType?: TypeHeader;
+  onMenuButtonClick?: () => void;
   logoSrc?: string | null;
   searchBarProps: SearchBarProps;
   searchEnabled: boolean;
@@ -73,6 +74,7 @@ const Header: React.FC<Props> = ({
   profiles,
   profilesEnabled,
   accessModel,
+  onMenuButtonClick,
 }) => {
   const { t } = useTranslation('menu');
   const [logoLoaded, setLogoLoaded] = useState(false);
@@ -159,7 +161,7 @@ const Header: React.FC<Props> = ({
   return (
     <header className={styles.container}>
       <div className={styles.menu}>
-        <Link href="/p/gRb8jEQx" aria-label="all-series">
+        <Link to="/p/gRb8jEQx" aria-label="all-series" onClick={onMenuButtonClick}>
           <Menu />
         </Link>
       </div>

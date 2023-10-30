@@ -9,7 +9,6 @@ exports[`<Header /> > renders header 1`] = `
       class="_menu_f4f7a7"
     >
       <a
-        aria-label="all-series"
         class="_link_a14c64"
         href="/p/gRb8jEQx"
       >
@@ -83,7 +82,15 @@ exports[`<Header /> > renders header 1`] = `
       aria-label="menu"
       class="_nav_f4f7a7"
     >
-      a
+      <a
+        aria-current="page"
+        class="_button_f8f296 _default_f8f296 _outlined_f8f296 _active_f8f296"
+        href="/"
+      >
+        <span>
+          Home
+        </span>
+      </a>
     </nav>
     <div
       class="_actions_f4f7a7"
