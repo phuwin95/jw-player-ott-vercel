@@ -14,15 +14,15 @@ describe('<Header />', () => {
     const playlistMenuItems = [<Button key="key" label="Home" to="/" />];
     const { container } = render(
       <Header
-        onMenuButtonClick={vi.fn()}
+        // onMenuButtonClick={vi.fn()}
         searchBarProps={{
           query: '',
           onQueryChange: vi.fn(),
         }}
         searchEnabled
-        searchActive={false}
-        onSearchButtonClick={vi.fn()}
-        onCloseSearchButtonClick={vi.fn()}
+        // searchActive={false}
+        // onSearchButtonClick={vi.fn()}
+        // onCloseSearchButtonClick={vi.fn()}
         onLoginButtonClick={vi.fn()}
         userMenuOpen={false}
         openUserMenu={vi.fn()}
