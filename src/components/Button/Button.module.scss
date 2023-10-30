@@ -8,8 +8,8 @@ $large-button-height: 46px;
 
 .button {
   position: relative;
-  display: flex;
-  justify-content: center;
+  display: inline-flex;
+  justify-content: inherit;
   align-items: center;
   height: $medium-button-height;
   padding: 0 16px;
