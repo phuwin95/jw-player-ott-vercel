@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { copyToClipboard } from '#src/utils/dom';
-// import Check from '#src/icons/Check';
-// import Share from '#src/icons/Share';
 import useBreakpoint, { Breakpoint } from '#src/hooks/useBreakpoint';
 import Button from '#components/Button/Button';
 
