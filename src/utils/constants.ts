@@ -2,7 +2,7 @@ export const breakpoints = {
   tiny: 350,
   mobile: 576,
   tablet: 768,
-  large: 992,
+  large: 1024,
   xLarge: 1200,
 };
 

@@ -104,7 +104,7 @@ const Header: React.FC<Props> = ({
   const showLanguageSwitcher = supportedLanguages.length > 1;
 
   const renderSearch = () => {
-    if (!searchEnabled) return null;
+    if (!searchEnabled || isMenuOpen) return null;
 
     return searchActive ? (
       <div className={styles.searchContainer}>

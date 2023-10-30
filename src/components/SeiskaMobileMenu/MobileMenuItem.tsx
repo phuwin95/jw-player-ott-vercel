@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styld, { css } from 'styled-components';
 
 import Link from './NextLink';
 
@@ -13,7 +13,7 @@ export const MobileMenuItemCss = css<{ bold: boolean | string }>`
   display: block;
 `;
 
-const StyledLink = styled(Link)<{ bold: boolean }>`
+const StyledLink = styld(Link)<{ bold: boolean }>`
   ${MobileMenuItemCss}
 `;
 

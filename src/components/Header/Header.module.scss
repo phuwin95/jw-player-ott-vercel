@@ -61,9 +61,9 @@
 }
 
 .mobileOnly {
-  
-  @include responsive.desktop-only() {
-    display: none;
+  display:none;
+  @include responsive.mobile-and-tablet() {
+    display: inherit;
   }
 }
 
@@ -100,6 +100,7 @@
 .actions {
   position: relative;
   display: flex;
+  justify-self: flex-end;
 
   @include responsive.mobile-and-tablet() {
     // the search container wants to position itself against the header

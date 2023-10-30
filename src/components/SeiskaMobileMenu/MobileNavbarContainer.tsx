@@ -14,7 +14,7 @@ const StyledMobileNavBarMenu = styld.div<{ isMenuOpen: boolean }>`
   backface-visibility: hidden;
   width: 100%;
   height: 100%;
-  @media (min-width: ${breakpoints.mobile}px) {
+  @media (min-width: ${breakpoints.large - 1}px) {
     display: none;
   }
 `;
