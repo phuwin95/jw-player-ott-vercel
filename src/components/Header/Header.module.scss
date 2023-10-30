@@ -100,7 +100,7 @@
 .actions {
   position: relative;
   display: flex;
-  justify-self: flex-end;
+  justify-content: flex-end;
 
   @include responsive.mobile-and-tablet() {
     // the search container wants to position itself against the header
