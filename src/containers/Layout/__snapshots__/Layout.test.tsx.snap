@@ -14,11 +14,9 @@ exports[`<Layout /> > renders layout 1`] = `
         <div
           class="_menu_f4f7a7"
         >
-          <div
-            aria-label="open_menu"
-            class="_iconButton_0fef65"
-            role="button"
-            tabindex="0"
+          <a
+            aria-label="all-series"
+            href="/p/gRb8jEQx"
           >
             <svg
               aria-hidden="true"
@@ -84,22 +82,12 @@ exports[`<Layout /> > renders layout 1`] = `
                 />
               </g>
             </svg>
-          </div>
+          </a>
         </div>
         <nav
           aria-label="menu"
           class="_nav_f4f7a7"
-        >
-          <a
-            aria-current="page"
-            class="_button_f8f296 _default_f8f296 _text_f8f296 _active_f8f296"
-            href="/"
-          >
-            <span>
-              home
-            </span>
-          </a>
-        </nav>
+        />
         <div
           class="_actions_f4f7a7"
         />

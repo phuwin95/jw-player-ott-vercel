@@ -8,11 +8,9 @@ exports[`<Header /> > renders header 1`] = `
     <div
       class="_menu_f4f7a7"
     >
-      <div
-        aria-label="open_menu"
-        class="_iconButton_0fef65"
-        role="button"
-        tabindex="0"
+      <a
+        aria-label="all-series"
+        href="/p/gRb8jEQx"
       >
         <svg
           aria-hidden="true"
@@ -78,7 +76,7 @@ exports[`<Header /> > renders header 1`] = `
             />
           </g>
         </svg>
-      </div>
+      </a>
     </div>
     <nav
       aria-label="menu"
@@ -90,34 +88,42 @@ exports[`<Header /> > renders header 1`] = `
       class="_actions_f4f7a7"
     >
       <div
-        aria-label="Open search"
-        class="_iconButton_0fef65 _actionButton_f4f7a7"
-        role="button"
-        tabindex="0"
+        class="_searchContainer_f4f7a7"
       >
-        <svg
-          aria-hidden="true"
-          class="_icon_1e9999"
-          focusable="false"
-          viewBox="0 0 31 32"
-          xmlns="http://www.w3.org/2000/svg"
+        <div
+          class="_searchBar_3bb1d7"
         >
-          <g
-            fill="transparent"
+          <svg
+            aria-hidden="true"
+            class="_icon_1e9999 _icon_3bb1d7"
+            focusable="false"
+            viewBox="0 0 31 32"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              d="M27.8263 31.0607C28.4121 31.6464 29.3619 31.6464 29.9476 31.0607C30.5334 30.4749 30.5334 29.5251 29.9476 28.9393L27.8263 31.0607ZM29.9476 28.9393L19.9391 18.9308L17.8178 21.0521L27.8263 31.0607L29.9476 28.9393Z"
-              fill="#FFED00"
-            />
-            <path
-              d="M11.8684 22.7368C17.5947 22.7368 22.2368 18.0947 22.2368 12.3684C22.2368 6.64208 17.5947 2 11.8684 2C6.14208 2 1.5 6.64208 1.5 12.3684C1.5 18.0947 6.14208 22.7368 11.8684 22.7368Z"
-              stroke="#FFED00"
-              stroke-miterlimit="10"
-              stroke-width="3"
-            />
-             
-          </g>
-        </svg>
+            <g
+              fill="transparent"
+            >
+              <path
+                d="M27.8263 31.0607C28.4121 31.6464 29.3619 31.6464 29.9476 31.0607C30.5334 30.4749 30.5334 29.5251 29.9476 28.9393L27.8263 31.0607ZM29.9476 28.9393L19.9391 18.9308L17.8178 21.0521L27.8263 31.0607L29.9476 28.9393Z"
+                fill="#FFED00"
+              />
+              <path
+                d="M11.8684 22.7368C17.5947 22.7368 22.2368 18.0947 22.2368 12.3684C22.2368 6.64208 17.5947 2 11.8684 2C6.14208 2 1.5 6.64208 1.5 12.3684C1.5 18.0947 6.14208 22.7368 11.8684 22.7368Z"
+                stroke="#FFED00"
+                stroke-miterlimit="10"
+                stroke-width="3"
+              />
+               
+            </g>
+          </svg>
+          <input
+            aria-label="search_bar.search_label"
+            class="_input_3bb1d7"
+            placeholder="search_bar.search_placeholder"
+            type="text"
+            value=""
+          />
+        </div>
       </div>
       <div
         class="_buttonContainer_f4f7a7"
