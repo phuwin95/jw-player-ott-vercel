@@ -67,7 +67,7 @@ const VideoDetails: React.FC<Props> = ({
               <div className={styles.primaryMetadata}>{isEpisode ? makeEpisodeSubtitle(title, primaryMetadata as string) : primaryMetadata}</div>
             </div>
             <CollapsibleText text={description} className={styles.description} maxHeight={isMobile ? 60 : 'none'} />
-            <div className={classNames(styles.buttonBar)}>
+            <div className={styles.buttonBar}>
               {startWatchingButton}
               {trailerButton}
               {favoriteButton}
