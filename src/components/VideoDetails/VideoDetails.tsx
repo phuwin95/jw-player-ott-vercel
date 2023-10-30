@@ -60,11 +60,9 @@ const VideoDetails: React.FC<Props> = ({
             <Image className={classNames(styles.poster, { [styles.episode]: isEpisode, [styles.series]: !isEpisode })} image={image} alt={title} width={1280} />
           </div>
           <div className={classNames({ [styles.infoEpisode]: isEpisode, [styles.infoSeries]: !isEpisode })}>
-            {secondaryMetadata && isEpisode ? (
-              <h2 className={classNames(styles.title, { [styles.episode]: isEpisode, [styles.series]: !isEpisode })}>{episodeTitle}</h2>
-            ) : (
-              <h2 className={classNames(styles.title, { [styles.episode]: isEpisode, [styles.series]: !isEpisode })}>{title}</h2>
-            )}
+            <h2 className={classNames(styles.title, { [styles.episode]: isEpisode, [styles.series]: !isEpisode })}>
+              {secondaryMetadata && isEpisode ? episodeTitle : title}
+            </h2>
             <div className={styles.metaContainer}>
               {primaryMetadata && isEpisode ? (
                 <div className={styles.primaryMetadata}>{makeEpisodeSubtitle(title, primaryMetadata as string)}</div>
