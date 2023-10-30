@@ -16,6 +16,7 @@ exports[`<Layout /> > renders layout 1`] = `
         >
           <a
             aria-label="all-series"
+            class="_link_a14c64"
             href="/p/gRb8jEQx"
           >
             <svg

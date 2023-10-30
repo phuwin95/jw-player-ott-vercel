@@ -7,6 +7,7 @@ import styles from './Header.module.scss';
 import AccountCircle from '#src/icons/AccountCircle';
 import SearchBar, { Props as SearchBarProps } from '#components/SearchBar/SearchBar';
 import Logo from '#components/Logo/Logo';
+import Link from '#components/Link/Link';
 import Menu from '#src/icons/Menu';
 import Button from '#components/Button/Button';
 import Popover from '#components/Popover/Popover';
@@ -158,9 +159,9 @@ const Header: React.FC<Props> = ({
   return (
     <header className={styles.container}>
       <div className={styles.menu}>
-        <a href="/p/gRb8jEQx" aria-label="all-series">
+        <Link href="/p/gRb8jEQx" aria-label="all-series">
           <Menu />
-        </a>
+        </Link>
       </div>
       {logoSrc && (
         <div className={styles.brand}>
