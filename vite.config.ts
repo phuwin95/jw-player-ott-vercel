@@ -81,6 +81,7 @@ export default ({ mode, command }: ConfigEnv): UserConfigExport => {
     },
     publicDir: './public',
     envPrefix: 'APP_',
+    base: '/videot',
     server: {
       port: 8080,
       host: true,
@@ -90,7 +91,8 @@ export default ({ mode, command }: ConfigEnv): UserConfigExport => {
     },
     mode: mode,
     build: {
-      outDir: './build/public',
+      outDir: './build/public/videot/',
+      assetsDir: 'assets',
       cssCodeSplit: false,
       minify: true,
       rollupOptions: {

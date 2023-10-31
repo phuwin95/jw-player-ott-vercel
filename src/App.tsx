@@ -40,7 +40,7 @@ export default function App() {
 
   return (
     <QueryProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/videot">
         <Root />
       </BrowserRouter>
     </QueryProvider>
