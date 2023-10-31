@@ -51,6 +51,7 @@ type Props = {
   profiles?: Profile[];
   profilesEnabled?: boolean;
   accessModel?: AccessModel;
+  isHome?: boolean;
 };
 
 const Header: React.FC<Props> = ({
@@ -78,6 +79,7 @@ const Header: React.FC<Props> = ({
   accessModel,
   onMenuButtonClick,
   onPreviousButtonClick,
+  isHome,
 }) => {
   const { t } = useTranslation('menu');
   const [logoLoaded, setLogoLoaded] = useState(false);
@@ -160,8 +162,6 @@ const Header: React.FC<Props> = ({
       </React.Fragment>
     );
   };
-
-  const isHome = window.location.pathname === '/' ? true : false;
 
   return (
     <header className={styles.container}>
