@@ -74,8 +74,6 @@
   position: relative;
   display: flex;
   justify-content: flex-end;
-  width: 169px;
-  height: 27px;
 }
 
 //
@@ -118,9 +116,13 @@
     justify-content: space-between;
   }
 
+  .hamburger {
+    display: flex;
+  }
+
   .menu {
     display: block;
-    margin: 4px 0 0 20px;
+    margin-left: 10px;
     > a {
       svg {
         width: 31px;
@@ -134,10 +136,8 @@
   }
 
   .searchContainer {
-    position: absolute;
-    left: -20px;
     display: flex;
-    width: 169px;
+    align-self: center;
   }
 
 }
@@ -149,13 +149,19 @@
     grid-template-columns: 0.5fr 2fr 0.5fr;
     grid-template-rows: auto;
     grid-template-areas: 
-    'menu search .'; // . is left for the seiska hamburger menu
+    'menu actions hamburger';
+  }
+
+  .hamburger {
+    grid-area: hamburger;
+    display: flex;
+    justify-self: end;
   }
 
   .menu {
-    display: block;
+    display: flex;
     grid-area: menu;
-    margin-top: 4px;
+    padding-left: 6px;
 
     > a {
       svg {
@@ -170,8 +176,7 @@
   }
 
   .actions {
-    grid-area: search;
-    width: 169px;
+    grid-area: actions;
     justify-self: center;
   }
 

@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Outlet, useLocation, useNavigate } from 'react-router';
 import shallow from 'zustand/shallow';
 import classNames from 'classnames';
+import { ThemeProvider } from 'styled-components';
 
 import styles from './Layout.module.scss';
 
@@ -23,6 +24,10 @@ import { getSupportedLanguages } from '#src/i18n/config';
 import { useProfileStore } from '#src/stores/ProfileStore';
 import { unpersistProfile, useProfiles } from '#src/hooks/useProfiles';
 import { IS_DEVELOPMENT_BUILD } from '#src/utils/common';
+import { darkTheme } from '#src/theme';
+import StyledMobileNavBarMenu from '#components/SeiskaMobileMenu/MobileNavbarContainer';
+import MobileMenu from '#components/SeiskaMobileMenu/MobileMenu';
+import useTouchOutside from '#src/hooks/useClickOutside';
 
 const Layout = () => {
   const location = useLocation();
@@ -99,6 +104,11 @@ const Layout = () => {
   const closeUserMenu = useCallback(() => useUIStore.setState({ userMenuOpen: false }), []);
   const openLanguageMenu = useCallback(() => useUIStore.setState({ languageMenuOpen: true }), []);
   const closeLanguageMenu = useCallback(() => useUIStore.setState({ languageMenuOpen: false }), []);
+  const hamburgerMenuOpen = useUIStore(({ hamburgerMenuOpen }) => hamburgerMenuOpen);
+  const openHambugerMenu = useCallback(() => useUIStore.setState({ hamburgerMenuOpen: true }), []);
+  const closeHamburgerMenu = useCallback(() => useUIStore.setState({ hamburgerMenuOpen: false }), []);
+
+  const hamburgerRef = useTouchOutside<HTMLDivElement>(closeHamburgerMenu, hamburgerMenuOpen);
 
   const renderUserActions = () => {
     if (!clientId) return null;
@@ -149,6 +159,9 @@ const Layout = () => {
           closeUserMenu={closeUserMenu}
           openLanguageMenu={openLanguageMenu}
           closeLanguageMenu={closeLanguageMenu}
+          openHamburgerMenu={openHambugerMenu}
+          closeHamburgerMenu={closeHamburgerMenu}
+          hamburgerMenuOpen={hamburgerMenuOpen}
           canLogin={!!clientId}
           showPaymentsMenuItem={accessModel !== 'AVOD'}
           currentProfile={profile ?? undefined}
@@ -161,6 +174,11 @@ const Layout = () => {
             <Button key={item.contentId} label={item.label} to={`/p/${item.contentId}`} variant="text" />
           ))}
         </Header>
+        <ThemeProvider theme={darkTheme}>
+          <StyledMobileNavBarMenu isMenuOpen={hamburgerMenuOpen} ref={hamburgerRef}>
+            <MobileMenu />
+          </StyledMobileNavBarMenu>
+        </ThemeProvider>
         <Sidebar isOpen={sideBarOpen} onClose={() => setSideBarOpen(false)}>
           <MenuButton label={t('home')} to="/" tabIndex={sideBarOpen ? 0 : -1} />
           {menu.map((item) => (

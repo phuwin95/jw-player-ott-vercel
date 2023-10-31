@@ -1,16 +1,15 @@
-import React, { ReactFragment, useState } from 'react';
+import React, { ReactNode, useState } from 'react';
 import classNames from 'classnames';
-import { ThemeProvider } from 'styled-components';
 import { useTranslation } from 'react-i18next';
 
 import styles from './Header.module.scss';
 
-import { darkTheme } from '#src/theme';
 import AccountCircle from '#src/icons/AccountCircle';
 import SearchBar, { Props as SearchBarProps } from '#components/SearchBar/SearchBar';
 import Logo from '#components/Logo/Logo';
 import Link from '#components/Link/Link';
 import Menu from '#src/icons/Menu';
+import Hamburger from '#src/icons/Hamburger';
 import Button from '#components/Button/Button';
 import Popover from '#components/Popover/Popover';
 import UserMenu from '#components/UserMenu/UserMenu';
@@ -24,8 +23,6 @@ import type { Profile } from '#types/account';
 import ProfileCircle from '#src/icons/ProfileCircle';
 import CloseIcon from '#src/icons/Close';
 import type { AccessModel } from '#types/Config';
-import StyledMobileNavBarMenu from '#components/SeiskaMobileMenu/MobileNavbarContainer';
-import MobileMenu from '#components/SeiskaMobileMenu/MobileMenu';
 
 type TypeHeader = 'static' | 'fixed';
 
@@ -35,13 +32,16 @@ type Props = {
   logoSrc?: string | null;
   searchBarProps: SearchBarProps;
   searchEnabled: boolean;
+  hamburgerMenuOpen: boolean;
   onLoginButtonClick?: () => void;
   onSignUpButtonClick?: () => void;
   openUserMenu: () => void;
   closeUserMenu: () => void;
   openLanguageMenu: () => void;
   closeLanguageMenu: () => void;
-  children?: ReactFragment;
+  openHamburgerMenu: () => void;
+  closeHamburgerMenu: () => void;
+  children?: ReactNode;
   isLoggedIn: boolean;
   userMenuOpen: boolean;
   languageMenuOpen: boolean;
@@ -70,6 +70,9 @@ const Header: React.FC<Props> = ({
   closeUserMenu,
   openLanguageMenu,
   closeLanguageMenu,
+  openHamburgerMenu,
+  closeHamburgerMenu,
+  hamburgerMenuOpen,
   canLogin = false,
   showPaymentsMenuItem,
   supportedLanguages,
@@ -83,10 +86,10 @@ const Header: React.FC<Props> = ({
 }) => {
   const { t } = useTranslation('menu');
   const [logoLoaded, setLogoLoaded] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-    document.body.style.overflow = isMenuOpen ? 'auto' : 'hidden';
+    document.body.style.overflow = hamburgerMenuOpen ? 'auto' : 'hidden';
+    if (hamburgerMenuOpen) closeHamburgerMenu();
+    else openHamburgerMenu();
   };
   const breakpoint = useBreakpoint();
 
@@ -94,22 +97,11 @@ const Header: React.FC<Props> = ({
   const showLanguageSwitcher = supportedLanguages.length > 1;
 
   const renderSearch = () => {
-    if (!searchEnabled || isMenuOpen) return null;
+    if (!searchEnabled) return null;
 
     return (
       <div className={styles.searchContainer}>
         <SearchBar {...searchBarProps} />
-        {/* <IconButton
-          className={styles.iconButton}
-          aria-label="Close search"
-          onClick={() => {
-            if (onCloseSearchButtonClick) {
-              onCloseSearchButtonClick();
-            }
-          }}
-        >
-          <CloseIcon />
-        </IconButton> */}
       </div>
     );
   };
@@ -187,15 +179,12 @@ const Header: React.FC<Props> = ({
         {renderSearch()}
         {renderLanguageDropdown()}
         {renderUserActions()}
+      </div>
+      <div className={styles.hamburger}>
         <IconButton className={classNames(styles.iconButton, styles.mobileOnly)} aria-label={t('open_menu')} onClick={toggleMenu}>
-          {isMenuOpen ? <CloseIcon /> : <Menu />}
+          {hamburgerMenuOpen ? <CloseIcon /> : <Hamburger />}
         </IconButton>
       </div>
-      <ThemeProvider theme={darkTheme}>
-        <StyledMobileNavBarMenu isMenuOpen={isMenuOpen}>
-          <MobileMenu />
-        </StyledMobileNavBarMenu>
-      </ThemeProvider>
     </header>
   );
 };
