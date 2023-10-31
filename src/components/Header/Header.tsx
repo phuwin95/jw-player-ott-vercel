@@ -21,7 +21,7 @@ import Panel from '#components/Panel/Panel';
 import type { Profile } from '#types/account';
 import ProfileCircle from '#src/icons/ProfileCircle';
 import type { AccessModel } from '#types/Config';
-import PreviousButton from '#src/icons/PreviousButton';
+import SeiskaChevronLeft from '#src/icons/SeiskaChevronLeft';
 
 type TypeHeader = 'static' | 'fixed';
 
@@ -172,7 +172,7 @@ const Header: React.FC<Props> = ({
           </Link>
         ) : (
           <Link aria-label="back" onClick={onPreviousButtonClick}>
-            <PreviousButton />
+            <SeiskaChevronLeft />
           </Link>
         )}
       </div>
