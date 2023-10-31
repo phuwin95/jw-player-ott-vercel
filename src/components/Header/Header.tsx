@@ -21,7 +21,6 @@ import Panel from '#components/Panel/Panel';
 import type { Profile } from '#types/account';
 import ProfileCircle from '#src/icons/ProfileCircle';
 import type { AccessModel } from '#types/Config';
-import PreviousButton from '#src/icons/PreviousButton';
 
 type TypeHeader = 'static' | 'fixed';
 
@@ -165,19 +164,17 @@ const Header: React.FC<Props> = ({
 
   return (
     <header className={styles.container}>
-      {isHome ? (
-        <div className={styles.menu}>
+      <div className={styles.menu}>
+        {isHome ? (
           <Link to="/p/gRb8jEQx" aria-label="all-series" onClick={onMenuButtonClick}>
             <Menu />
           </Link>
-        </div>
-      ) : (
-        <div className={styles.menu}>
+        ) : (
           <Link aria-label="back" onClick={onPreviousButtonClick}>
-            <PreviousButton />
+            <img src="/public/images/previous.svg" alt="back" />
           </Link>
-        </div>
-      )}
+        )}
+      </div>
       {logoSrc && (
         <div className={styles.brand}>
           <Logo src={logoSrc} onLoad={() => setLogoLoaded(true)} />
