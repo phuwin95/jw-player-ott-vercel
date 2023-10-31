@@ -27,7 +27,7 @@
     padding: 8px 60px 8px variables.$base-spacing;
 
     &.featured {
-      padding: 24px variables.$base-spacing;
+      padding: 8px variables.$base-spacing;
     }
   }
 
@@ -35,7 +35,7 @@
     padding: 0 calc(#{variables.$base-spacing} * 2);
 
     &.featured {
-      padding: 24px 10%;
+      padding: 8px 10%;
     }
   }
 }
