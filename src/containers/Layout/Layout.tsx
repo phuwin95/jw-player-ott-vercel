@@ -126,8 +126,7 @@ const Layout = () => {
       <div className={styles.main}>
         <Header
           onMenuButtonClick={() => setSideBarOpen(false)}
-          // eslint-disable-next-line no-restricted-globals
-          onPreviousButtonClick={() => history.back()}
+          onPreviousButtonClick={() => navigate(-1)}
           //logoSrc={banner} //disabling logo since we don't want to display it
           searchEnabled={!!searchPlaylist}
           searchBarProps={{
