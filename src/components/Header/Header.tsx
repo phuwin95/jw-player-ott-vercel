@@ -21,12 +21,14 @@ import Panel from '#components/Panel/Panel';
 import type { Profile } from '#types/account';
 import ProfileCircle from '#src/icons/ProfileCircle';
 import type { AccessModel } from '#types/Config';
+import PreviousButton from '#src/icons/PreviousButton';
 
 type TypeHeader = 'static' | 'fixed';
 
 type Props = {
   headerType?: TypeHeader;
   onMenuButtonClick?: () => void;
+  onPreviousButtonClick?: () => void;
   logoSrc?: string | null;
   searchBarProps: SearchBarProps;
   searchEnabled: boolean;
@@ -75,6 +77,7 @@ const Header: React.FC<Props> = ({
   profilesEnabled,
   accessModel,
   onMenuButtonClick,
+  onPreviousButtonClick,
 }) => {
   const { t } = useTranslation('menu');
   const [logoLoaded, setLogoLoaded] = useState(false);
@@ -158,13 +161,23 @@ const Header: React.FC<Props> = ({
     );
   };
 
+  const isHome = window.location.pathname === '/' ? true : false;
+
   return (
     <header className={styles.container}>
-      <div className={styles.menu}>
-        <Link to="/p/gRb8jEQx" aria-label="all-series" onClick={onMenuButtonClick}>
-          <Menu />
-        </Link>
-      </div>
+      {isHome ? (
+        <div className={styles.menu}>
+          <Link to="/p/gRb8jEQx" aria-label="all-series" onClick={onMenuButtonClick}>
+            <Menu />
+          </Link>
+        </div>
+      ) : (
+        <div className={styles.menu}>
+          <Link aria-label="back" onClick={onPreviousButtonClick}>
+            <PreviousButton />
+          </Link>
+        </div>
+      )}
       {logoSrc && (
         <div className={styles.brand}>
           <Logo src={logoSrc} onLoad={() => setLogoLoaded(true)} />
