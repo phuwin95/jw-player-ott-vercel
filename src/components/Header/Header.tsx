@@ -9,9 +9,8 @@ import { darkTheme } from '#src/theme';
 import AccountCircle from '#src/icons/AccountCircle';
 import SearchBar, { Props as SearchBarProps } from '#components/SearchBar/SearchBar';
 import Logo from '#components/Logo/Logo';
+import Link from '#components/Link/Link';
 import Menu from '#src/icons/Menu';
-import SearchIcon from '#src/icons/Search';
-import CloseIcon from '#src/icons/Close';
 import Button from '#components/Button/Button';
 import Popover from '#components/Popover/Popover';
 import UserMenu from '#components/UserMenu/UserMenu';
@@ -23,6 +22,7 @@ import type { LanguageDefinition } from '#src/i18n/config';
 import Panel from '#components/Panel/Panel';
 import type { Profile } from '#types/account';
 import ProfileCircle from '#src/icons/ProfileCircle';
+import CloseIcon from '#src/icons/Close';
 import type { AccessModel } from '#types/Config';
 import StyledMobileNavBarMenu from '#components/SeiskaMobileMenu/MobileNavbarContainer';
 import MobileMenu from '#components/SeiskaMobileMenu/MobileMenu';
@@ -31,13 +31,10 @@ type TypeHeader = 'static' | 'fixed';
 
 type Props = {
   headerType?: TypeHeader;
-  onMenuButtonClick: () => void;
+  onMenuButtonClick?: () => void;
   logoSrc?: string | null;
   searchBarProps: SearchBarProps;
   searchEnabled: boolean;
-  searchActive: boolean;
-  onSearchButtonClick?: () => void;
-  onCloseSearchButtonClick?: () => void;
   onLoginButtonClick?: () => void;
   onSignUpButtonClick?: () => void;
   openUserMenu: () => void;
@@ -61,15 +58,10 @@ type Props = {
 
 const Header: React.FC<Props> = ({
   children,
-  headerType = 'static',
-  onMenuButtonClick,
   logoSrc,
   searchBarProps,
-  searchActive,
-  onSearchButtonClick,
   searchEnabled,
   onLoginButtonClick,
-  onCloseSearchButtonClick,
   onSignUpButtonClick,
   isLoggedIn,
   userMenuOpen,
@@ -87,6 +79,7 @@ const Header: React.FC<Props> = ({
   profiles,
   profilesEnabled,
   accessModel,
+  onMenuButtonClick,
 }) => {
   const { t } = useTranslation('menu');
   const [logoLoaded, setLogoLoaded] = useState(false);
@@ -96,9 +89,6 @@ const Header: React.FC<Props> = ({
     document.body.style.overflow = isMenuOpen ? 'auto' : 'hidden';
   };
   const breakpoint = useBreakpoint();
-  const headerClassName = classNames(styles.header, styles[headerType], {
-    [styles.searchActive]: searchActive,
-  });
 
   // only show the language dropdown when there are other languages to choose from
   const showLanguageSwitcher = supportedLanguages.length > 1;
@@ -106,10 +96,10 @@ const Header: React.FC<Props> = ({
   const renderSearch = () => {
     if (!searchEnabled || isMenuOpen) return null;
 
-    return searchActive ? (
+    return (
       <div className={styles.searchContainer}>
         <SearchBar {...searchBarProps} />
-        <IconButton
+        {/* <IconButton
           className={styles.iconButton}
           aria-label="Close search"
           onClick={() => {
@@ -119,20 +109,8 @@ const Header: React.FC<Props> = ({
           }}
         >
           <CloseIcon />
-        </IconButton>
+        </IconButton> */}
       </div>
-    ) : (
-      <IconButton
-        className={classNames(styles.iconButton, styles.actionButton)}
-        aria-label="Open search"
-        onClick={() => {
-          if (onSearchButtonClick) {
-            onSearchButtonClick();
-          }
-        }}
-      >
-        <SearchIcon />
-      </IconButton>
     );
   };
 
@@ -191,29 +169,27 @@ const Header: React.FC<Props> = ({
   };
 
   return (
-    <header className={headerClassName}>
-      <div className={styles.container}>
-        <div className={styles.menu}>
-          <IconButton className={styles.iconButton} aria-label={t('open_menu')} onClick={onMenuButtonClick}>
-            <Menu />
-          </IconButton>
+    <header className={styles.container}>
+      <div className={styles.menu}>
+        <Link to="/p/gRb8jEQx" aria-label="all-series" onClick={onMenuButtonClick}>
+          <Menu />
+        </Link>
+      </div>
+      {logoSrc && (
+        <div className={styles.brand}>
+          <Logo src={logoSrc} onLoad={() => setLogoLoaded(true)} />
         </div>
-        {logoSrc && (
-          <div className={styles.brand}>
-            <Logo src={logoSrc} onLoad={() => setLogoLoaded(true)} />
-          </div>
-        )}
-        <nav className={styles.nav} aria-label="menu">
-          {logoLoaded || !logoSrc ? children : null}
-        </nav>
-        <div className={styles.actions}>
-          {renderSearch()}
-          {renderLanguageDropdown()}
-          {renderUserActions()}
-          <IconButton className={classNames(styles.iconButton, styles.mobileOnly)} aria-label={t('open_menu')} onClick={toggleMenu}>
-            {isMenuOpen ? <CloseIcon /> : <Menu />}
-          </IconButton>
-        </div>
+      )}
+      <nav className={styles.nav} aria-label="menu">
+        {logoLoaded || !logoSrc ? children : null}
+      </nav>
+      <div className={styles.actions}>
+        {renderSearch()}
+        {renderLanguageDropdown()}
+        {renderUserActions()}
+        <IconButton className={classNames(styles.iconButton, styles.mobileOnly)} aria-label={t('open_menu')} onClick={toggleMenu}>
+          {isMenuOpen ? <CloseIcon /> : <Menu />}
+        </IconButton>
       </div>
       <ThemeProvider theme={darkTheme}>
         <StyledMobileNavBarMenu isMenuOpen={isMenuOpen}>

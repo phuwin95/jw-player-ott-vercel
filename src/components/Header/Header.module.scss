@@ -4,41 +4,16 @@
 @use 'src/styles/mixins/utils';
 
 //
-// Header
-// --------------------------------
-
-.header {
-  height: variables.$header-height;
-  padding: 10px calc(#{variables.$base-spacing} * 2);
-  color: variables.$seiska-yellow;
-  background: var(--header-background, transparent);
-
-  //
-  // Make header fixed
-  //
-  &.fixed {
-    position: fixed;
-    z-index: variables.$header-z-index;
-    width: 100%;
-  }
-
-  //
-  // Make header static
-  //
-  &.static {
-    position: static;
-    width: 100%;
-  }
-}
-
-//
 // Header container
 //
 .container {
-  position: relative;
   display: flex;
-  flex-direction: row;
-  height: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 51px;
+  padding: 10px 0 0;
+  color: variables.$seiska-yellow;
+  text-align: center;
 }
 
 //
@@ -49,7 +24,7 @@
 }
 
 //
-// Header menu
+// Header brand/logo
 //
 .iconButton {
   width: 36px;
@@ -80,17 +55,15 @@
 // Header navigation
 //
 .nav {
-  display: inline-block;
-  flex: 1;
-  align-items: center;
-
   > a {
-    height: 36px;
-    min-height: 36px;
-    margin: 0 6px;
+    height: 22px;
+    min-height: 22px;
+    margin: 0 31px 0 0;
     padding: 0 calc(#{variables.$base-spacing} / 2);
     font-weight: var(--body-font-weight-bold);
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 1.20;
+    text-align: center;
   }
 }
 
@@ -101,42 +74,8 @@
   position: relative;
   display: flex;
   justify-content: flex-end;
-
-  @include responsive.mobile-and-tablet() {
-    // the search container wants to position itself against the header
-    position: static;
-  }
-}
-
-.actionButton {
-  margin-left: calc(#{variables.$base-spacing} / 2);
-}
-
-//
-// Header search
-//
-.search {
-  max-width: 180px;
-}
-
-//
-// Header search container
-//
-.searchContainer {
-  position: absolute;
-  left: -#{variables.$search-bar-width-desktop};
-  display: flex;
-  width: variables.$search-bar-width-desktop;
-
-  > div:first-child {
-    flex: 1;
-  }
-
-  @include responsive.mobile-and-tablet() {
-    right: 0;
-    left: 0;
-    width: auto;
-  }
+  width: 169px;
+  height: 27px;
 }
 
 //
@@ -167,50 +106,73 @@
     cursor: pointer;
   }
 }
+
 //
 // mediaQueries
 // --------------------------------
 
-@include responsive.mobile-and-tablet() {
-  .header {
-    height: variables.$header-height-mobile;
-    padding: 10px calc(#{variables.$base-spacing} * 2);
+@include responsive.tablet-only() {
+
+  .container {
+    display: flex;
+    justify-content: space-between;
   }
 
   .menu {
     display: block;
-  }
-
-  .brand {
-    flex: 1;
-    margin-left: variables.$base-spacing;
+    margin: 4px 0 0 20px;
+    > a {
+      svg {
+        width: 31px;
+        height: 30px;
+      }
+    }
   }
 
   .nav {
     display: none;
   }
 
-  .searchActive {
-    .menu,
-    .brand,
-    .buttonContainer,
-    .actionButton {
-      display: none;
-    }
+  .searchContainer {
+    position: absolute;
+    left: -20px;
+    display: flex;
+    width: 169px;
   }
+
 }
 
 @include responsive.mobile-only() {
-  .header {
-    padding: 10px variables.$base-spacing;
+
+  .container {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 0.5fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    'menu search .'; // . is left for the seiska hamburger menu
   }
 
-  .brand {
-    text-align: center;
+  .menu {
+    display: block;
+    grid-area: menu;
+    margin-top: 4px;
+
+    > a {
+      svg {
+        width: 31px;
+        height: 30px;
+      }
+    }
   }
 
-  .menu,
+  .nav {
+    display: none;
+  }
+
   .actions {
-    width: 80px;
+    grid-area: search;
+    width: 169px;
+    justify-self: center;
   }
+
 }

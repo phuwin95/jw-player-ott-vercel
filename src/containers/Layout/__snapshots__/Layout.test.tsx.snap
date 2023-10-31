@@ -9,80 +9,158 @@ exports[`<Layout /> > renders layout 1`] = `
       class="_main_c71437"
     >
       <header
-        class="_header_f4f7a7 _static_f4f7a7"
+        class="_container_f4f7a7"
       >
         <div
-          class="_container_f4f7a7"
+          class="_menu_f4f7a7"
+        >
+          <a
+            class="_link_a14c64"
+            href="/p/gRb8jEQx"
+          >
+            <svg
+              aria-hidden="true"
+              class="_icon_1e9999"
+              focusable="false"
+              viewBox="0 0 32 28"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="transparent"
+              >
+                <mask
+                  fill="white"
+                  id="path-1-inside-1_910_802"
+                >
+                  <rect
+                    height="13"
+                    rx="2"
+                    width="13"
+                    x="0.5"
+                  />
+                </mask>
+                <rect
+                  height="13"
+                  mask="url(#path-1-inside-1_910_802)"
+                  rx="2"
+                  stroke="#FFED00"
+                  stroke-width="6"
+                  width="13"
+                  x="0.5"
+                />
+                <mask
+                  fill="white"
+                  id="path-2-inside-2_910_802"
+                >
+                  <rect
+                    height="13"
+                    rx="2"
+                    width="13"
+                    x="0.5"
+                    y="15"
+                  />
+                </mask>
+                <rect
+                  height="13"
+                  mask="url(#path-2-inside-2_910_802)"
+                  rx="2"
+                  stroke="#FFED00"
+                  stroke-width="6"
+                  width="13"
+                  x="0.5"
+                  y="15"
+                />
+                <path
+                  d="M17 17C17 16.7239 17.2239 16.5 17.5 16.5H26.5C26.7761 16.5 27 16.7239 27 17V26C27 26.2761 26.7761 26.5 26.5 26.5H17.5C17.2239 26.5 17 26.2761 17 26V17Z"
+                  stroke="#FFED00"
+                  stroke-width="3"
+                />
+                <path
+                  d="M17 2C17 1.72386 17.2239 1.5 17.5 1.5H26.5C26.7761 1.5 27 1.72386 27 2V11C27 11.2761 26.7761 11.5 26.5 11.5H17.5C17.2239 11.5 17 11.2761 17 11V2Z"
+                  stroke="#FFED00"
+                  stroke-width="3"
+                />
+              </g>
+            </svg>
+          </a>
+        </div>
+        <nav
+          aria-label="menu"
+          class="_nav_f4f7a7"
+        />
+        <div
+          class="_actions_f4f7a7"
         >
           <div
-            class="_menu_f4f7a7"
+            aria-label="open_menu"
+            class="_iconButton_0fef65 _iconButton_f4f7a7 _mobileOnly_f4f7a7"
+            role="button"
+            tabindex="0"
           >
-            <div
-              aria-label="open_menu"
-              class="_iconButton_0fef65 _iconButton_f4f7a7"
-              role="button"
-              tabindex="0"
+            <svg
+              aria-hidden="true"
+              class="_icon_1e9999"
+              focusable="false"
+              viewBox="0 0 32 28"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                aria-hidden="true"
-                class="_icon_1e9999"
-                focusable="false"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
+              <g
+                fill="transparent"
               >
-                <g>
-                  <path
-                    d="M0 0h24v24H0V0z"
-                    fill="none"
+                <mask
+                  fill="white"
+                  id="path-1-inside-1_910_802"
+                >
+                  <rect
+                    height="13"
+                    rx="2"
+                    width="13"
+                    x="0.5"
                   />
-                  <path
-                    d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+                </mask>
+                <rect
+                  height="13"
+                  mask="url(#path-1-inside-1_910_802)"
+                  rx="2"
+                  stroke="#FFED00"
+                  stroke-width="6"
+                  width="13"
+                  x="0.5"
+                />
+                <mask
+                  fill="white"
+                  id="path-2-inside-2_910_802"
+                >
+                  <rect
+                    height="13"
+                    rx="2"
+                    width="13"
+                    x="0.5"
+                    y="15"
                   />
-                </g>
-              </svg>
-            </div>
-          </div>
-          <nav
-            aria-label="menu"
-            class="_nav_f4f7a7"
-          >
-            <a
-              aria-current="page"
-              class="_button_f8f296 _default_f8f296 _text_f8f296 _active_f8f296"
-              href="/"
-            >
-              <span>
-                home
-              </span>
-            </a>
-          </nav>
-          <div
-            class="_actions_f4f7a7"
-          >
-            <div
-              aria-label="open_menu"
-              class="_iconButton_0fef65 _iconButton_f4f7a7 _mobileOnly_f4f7a7"
-              role="button"
-              tabindex="0"
-            >
-              <svg
-                aria-hidden="true"
-                class="_icon_1e9999"
-                focusable="false"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g>
-                  <path
-                    d="M0 0h24v24H0V0z"
-                    fill="none"
-                  />
-                  <path
-                    d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-                  />
-                </g>
-              </svg>
-            </div>
+                </mask>
+                <rect
+                  height="13"
+                  mask="url(#path-2-inside-2_910_802)"
+                  rx="2"
+                  stroke="#FFED00"
+                  stroke-width="6"
+                  width="13"
+                  x="0.5"
+                  y="15"
+                />
+                <path
+                  d="M17 17C17 16.7239 17.2239 16.5 17.5 16.5H26.5C26.7761 16.5 27 16.7239 27 17V26C27 26.2761 26.7761 26.5 26.5 26.5H17.5C17.2239 26.5 17 26.2761 17 26V17Z"
+                  stroke="#FFED00"
+                  stroke-width="3"
+                />
+                <path
+                  d="M17 2C17 1.72386 17.2239 1.5 17.5 1.5H26.5C26.7761 1.5 27 1.72386 27 2V11C27 11.2761 26.7761 11.5 26.5 11.5H17.5C17.2239 11.5 17 11.2761 17 11V2Z"
+                  stroke="#FFED00"
+                  stroke-width="3"
+                />
+              </g>
+            </svg>
           </div>
         </div>
         <div
