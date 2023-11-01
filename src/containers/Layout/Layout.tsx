@@ -28,6 +28,7 @@ import { darkTheme } from '#src/theme';
 import StyledMobileNavBarMenu from '#components/SeiskaMobileMenu/MobileNavbarContainer';
 import MobileMenu from '#components/SeiskaMobileMenu/MobileMenu';
 import useTouchOutside from '#src/hooks/useClickOutside';
+import SeiskaHeader from '#components/SeiskaHeader';
 
 const Layout = () => {
   const location = useLocation();
@@ -134,6 +135,9 @@ const Layout = () => {
         <meta name="twitter:description" content={metaDescription} />
       </Helmet>
       <div className={styles.main}>
+        <ThemeProvider theme={darkTheme}>
+          <SeiskaHeader />
+        </ThemeProvider>
         <Header
           onMenuButtonClick={() => setSideBarOpen(false)}
           onPreviousButtonClick={() => navigate(-1)}

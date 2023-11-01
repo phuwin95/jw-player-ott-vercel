@@ -1,7 +1,8 @@
 import React from 'react';
 import styld from 'styled-components';
 
-import Button, { ButtonProps } from './Button';
+import Button, { ButtonProps } from '../SeiskaButton';
+
 import MobileMenuItem from './MobileMenuItem';
 import CollapsibleItem from './CollapsibleItem';
 
