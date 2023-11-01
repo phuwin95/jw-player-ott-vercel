@@ -136,6 +136,8 @@ const Layout = () => {
       <div className={styles.main}>
         <Header
           onMenuButtonClick={() => setSideBarOpen(false)}
+          onPreviousButtonClick={() => navigate(-1)}
+          isHome={location.pathname === '/'}
           //logoSrc={banner} //disabling logo since we don't want to display it
           searchEnabled={!!searchPlaylist}
           searchBarProps={{
