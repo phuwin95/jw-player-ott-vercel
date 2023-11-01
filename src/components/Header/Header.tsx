@@ -21,12 +21,14 @@ import Panel from '#components/Panel/Panel';
 import type { Profile } from '#types/account';
 import ProfileCircle from '#src/icons/ProfileCircle';
 import type { AccessModel } from '#types/Config';
+import SeiskaChevronLeft from '#src/icons/SeiskaChevronLeft';
 
 type TypeHeader = 'static' | 'fixed';
 
 type Props = {
   headerType?: TypeHeader;
   onMenuButtonClick?: () => void;
+  onPreviousButtonClick?: () => void;
   logoSrc?: string | null;
   searchBarProps: SearchBarProps;
   searchEnabled: boolean;
@@ -49,6 +51,7 @@ type Props = {
   profiles?: Profile[];
   profilesEnabled?: boolean;
   accessModel?: AccessModel;
+  isHome?: boolean;
 };
 
 const Header: React.FC<Props> = ({
@@ -75,6 +78,8 @@ const Header: React.FC<Props> = ({
   profilesEnabled,
   accessModel,
   onMenuButtonClick,
+  onPreviousButtonClick,
+  isHome,
 }) => {
   const { t } = useTranslation('menu');
   const [logoLoaded, setLogoLoaded] = useState(false);
@@ -161,9 +166,15 @@ const Header: React.FC<Props> = ({
   return (
     <header className={styles.container}>
       <div className={styles.menu}>
-        <Link to="/p/gRb8jEQx" aria-label="all-series" onClick={onMenuButtonClick}>
-          <Menu />
-        </Link>
+        {isHome ? (
+          <Link to="/p/gRb8jEQx" aria-label="all-series" onClick={onMenuButtonClick}>
+            <Menu />
+          </Link>
+        ) : (
+          <Link aria-label="back" onClick={onPreviousButtonClick}>
+            <SeiskaChevronLeft />
+          </Link>
+        )}
       </div>
       {logoSrc && (
         <div className={styles.brand}>
