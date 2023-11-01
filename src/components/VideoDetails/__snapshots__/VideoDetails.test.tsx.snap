@@ -12,16 +12,20 @@ exports[`<VideoDetails> > renders and matches snapshot 1`] = `
       <div
         class="_main_d0c133 _mainPadding_d0c133"
       >
-        <img
-          alt="Test video"
-          class="_poster_d0c133 _image_4c41c3"
-          src="http://image.jpg?width=1280"
-        />
         <div
-          class="_info_d0c133"
+          data-type="series"
+        >
+          <img
+            alt="Test video"
+            class="_poster_d0c133 _series_d0c133 _image_4c41c3"
+            src="http://image.jpg?width=1280"
+          />
+        </div>
+        <div
+          class="_infoSeries_d0c133"
         >
           <h2
-            class="_title_d0c133"
+            class="_title_d0c133 _series_d0c133"
           >
             Test video
           </h2>
@@ -32,13 +36,6 @@ exports[`<VideoDetails> > renders and matches snapshot 1`] = `
               class="_primaryMetadata_d0c133"
             >
               Primary metadata string
-            </div>
-            <div
-              class="_secondaryMetadata_d0c133"
-            >
-              <strong>
-                Secondary metadata string
-              </strong>
             </div>
           </div>
           <div

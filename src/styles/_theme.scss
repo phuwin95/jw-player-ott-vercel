@@ -28,6 +28,7 @@ $btn-default-color: variables.$white !default;
 
 $btn-primary-bg: variables.$white !default;
 $btn-primary-color: variables.$black !default;
+$btn-primary-bg-gradient: linear-gradient(180deg, rgba(255, 107, 0, 0.45) 0%, rgba(0, 0, 0, 0) 100%), linear-gradient(0deg, #ffed00, #ffed00) !default;
 
 $btn-danger-bg: rgba(0, 0, 0, 0) !default;
 $btn-danger-color: variables.$red-dark !default;
