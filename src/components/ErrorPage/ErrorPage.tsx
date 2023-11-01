@@ -5,7 +5,7 @@ import styles from './ErrorPage.module.scss';
 
 import { IS_DEMO_MODE, IS_DEVELOPMENT_BUILD, IS_PREVIEW_MODE } from '#src/utils/common';
 import DevStackTrace from '#components/DevStackTrace/DevStackTrace';
-import { useConfigStore } from '#src/stores/ConfigStore';
+// import { useConfigStore } from '#src/stores/ConfigStore';
 
 interface Props {
   disableFallbackTranslation?: boolean;
@@ -31,14 +31,15 @@ const ErrorPage = ({ title, message, learnMoreLabel, ...rest }: Props) => {
 };
 
 export const ErrorPageWithoutTranslation = ({ title, children, message, learnMoreLabel, error, helpLink }: Props) => {
-  const logo = useConfigStore((s) => s.config?.assets?.banner);
+  //const logo = useConfigStore((s) => s.config?.assets?.banner);
 
   return (
     <div className={styles.errorPage}>
       <div className={styles.box}>
-        <img className={styles.image} src={logo || '/images/logo.png'} alt={'Logo'} />
+        {/* <img className={styles.image} src={logo || '/images/logo.png'} alt={'Logo'} /> */}
+        <h1 className={styles.searchError}>Whoops!</h1>
         <header>
-          <h1 className={styles.title}>{title || 'An error occurred'}</h1>
+          <h2 className={styles.title}>{title || 'An error occurred'}</h2>
         </header>
         <main className={styles.main}>
           <>

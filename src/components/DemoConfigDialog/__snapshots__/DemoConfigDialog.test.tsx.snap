@@ -30,17 +30,17 @@ exports[`<DemoConfigDialog> > renders and matches snapshot error dialog 1`] = `
       <div
         class="_box_8c5621"
       >
-        <img
-          alt="Logo"
-          class="_image_8c5621"
-          src="/images/logo.png"
-        />
+        <h1
+          class="_searchError_8c5621"
+        >
+          Whoops!
+        </h1>
         <header>
-          <h1
+          <h2
             class="_title_8c5621"
           >
             app_config_not_found
-          </h1>
+          </h2>
         </header>
         <main
           class="_main_8c5621"
