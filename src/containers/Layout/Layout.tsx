@@ -87,6 +87,10 @@ const Layout = () => {
   //   });
   // };
 
+  const goBack = useCallback(() => {
+    navigate(-1);
+  }, [navigate]);
+
   const loginButtonClickHandler = () => {
     navigate(addQueryParam(location, 'u', 'login'));
   };
@@ -136,7 +140,7 @@ const Layout = () => {
       <div className={styles.main}>
         <Header
           onMenuButtonClick={() => setSideBarOpen(false)}
-          onPreviousButtonClick={() => navigate(-1)}
+          onPreviousButtonClick={goBack}
           isHome={location.pathname === '/'}
           //logoSrc={banner} //disabling logo since we don't want to display it
           searchEnabled={!!searchPlaylist}
