@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { copyToClipboard } from '#src/utils/dom';
-import Check from '#src/icons/Check';
-import Share from '#src/icons/Share';
 import useBreakpoint, { Breakpoint } from '#src/hooks/useBreakpoint';
 import Button from '#components/Button/Button';
 
@@ -30,13 +28,7 @@ const ShareButton = ({ title, description, url }: Props) => {
   };
 
   return (
-    <Button
-      label={hasShared ? t('video:copied_url') : t('video:share')}
-      startIcon={hasShared ? <Check /> : <Share />}
-      onClick={onShareClick}
-      active={hasShared}
-      fullWidth={breakpoint < Breakpoint.md}
-    />
+    <Button label={hasShared ? t('video:copied_url') : t('video:share')} onClick={onShareClick} active={hasShared} fullWidth={breakpoint < Breakpoint.md} />
   );
 };
 
