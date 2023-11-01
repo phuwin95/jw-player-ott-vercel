@@ -23,6 +23,13 @@ const RootLoader = ({ setAppIsReady }: { setAppIsReady: React.Dispatch<React.Set
     refetchInterval: false,
   });
 
+  // redirect to /videot if it's not in /videot only in development
+  useEffect(() => {
+    if (IS_DEVELOPMENT_BUILD && window.location.pathname === '/') {
+      window.location.pathname = '/videot';
+    }
+  }, []);
+
   const configSource = useConfigSource(settingsQuery?.data);
 
   const configQuery = useQuery('config-init-' + configSource, async () => await loadAndValidateConfig(configSource), {

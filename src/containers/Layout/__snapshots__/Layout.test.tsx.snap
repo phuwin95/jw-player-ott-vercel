@@ -91,7 +91,359 @@ exports[`<Layout /> > renders layout 1`] = `
         <div
           class="_actions_f4f7a7"
         />
+        <div
+          class="_hamburger_f4f7a7"
+        >
+          <div
+            aria-label="open_menu"
+            class="_iconButton_0fef65 _iconButton_f4f7a7 _mobileOnly_f4f7a7"
+            role="button"
+            tabindex="0"
+          >
+            <svg
+              aria-hidden="true"
+              class="_icon_1e9999"
+              focusable="false"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g>
+                <path
+                  d="M0 0h24v24H0V0z"
+                  fill="none"
+                />
+                <path
+                  d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+                />
+              </g>
+            </svg>
+          </div>
+        </div>
       </header>
+      <div
+        class="sc-bdnyFh fBvcvK"
+      >
+        <div
+          class="sc-jrsKJM iYygVd"
+          id="mobile-main-menu"
+        >
+          <ul
+            class="sc-kEqXeH cEswkV"
+          >
+            <li
+              class="sc-iqAbyq bFPRki"
+            >
+              <a
+                class="sc-gtsqUy UBJb sc-hKFymg iJoBMj"
+                href="https://www.seiska.fi/tuoreimmat"
+              >
+                Tuoreimmat
+              </a>
+            </li>
+            <li
+              class="sc-iqAbyq bFPRki"
+            >
+              <a
+                class="sc-gtsqUy UBJb sc-hKFymg iJoBMj"
+                href="https://www.seiska.fi/suosituimmat"
+              >
+                Luetuimmat
+              </a>
+            </li>
+            <li
+              class="sc-iqAbyq bFPRki"
+            >
+              <a
+                class="sc-gtsqUy UBJb sc-hKFymg iJoBMj"
+                href="https://www.seiska.fi/vain-seiskassa"
+              >
+                Vain Seiskassa
+              </a>
+            </li>
+            <li
+              class="sc-iqAbyq bFPRki"
+            >
+              <a
+                class="sc-gtsqUy UBJb sc-hKFymg iJoBMj"
+                href="https://www.seiska.fi/kotimaa"
+              >
+                Kotimaa
+              </a>
+            </li>
+            <li
+              class="sc-iqAbyq bFPRki"
+            >
+              <a
+                class="sc-gtsqUy UBJb sc-hKFymg iJoBMj"
+                href="https://www.seiska.fi/ulkomaat"
+              >
+                Ulkomaat
+              </a>
+            </li>
+            <li
+              class="sc-iqAbyq bFPRki"
+            >
+              <a
+                class="sc-gtsqUy UBJb sc-hKFymg iJoBMj"
+                href="https://www.seiska.fi/kuninkaalliset"
+              >
+                Kuninkaalliset
+              </a>
+            </li>
+            <li
+              class="sc-iqAbyq bFPRki"
+            >
+              <a
+                class="sc-gtsqUy UBJb sc-hKFymg iJoBMj"
+                href="https://www.seiska.fi/rikos"
+              >
+                Rikos
+              </a>
+            </li>
+            <li
+              class="sc-iqAbyq bFPRki"
+            >
+              <a
+                class="sc-gtsqUy UBJb sc-hKFymg iJoBMj"
+                href="https://www.seiska.fi/urheilu"
+              >
+                Urheilu
+              </a>
+            </li>
+            <li
+              class="sc-iqAbyq bFPRki"
+            >
+              <a
+                class="sc-gtsqUy UBJb sc-hKFymg iJoBMj"
+                href="https://www.seiska.fi/terveys"
+              >
+                Terveys
+              </a>
+            </li>
+            <li
+              class="sc-iqAbyq bFPRki"
+            >
+              <a
+                class="sc-gtsqUy UBJb sc-hKFymg iJoBMj"
+                href="https://www.seiska.fi/videot"
+              >
+                Videot
+              </a>
+            </li>
+            <li
+              class="sc-iqAbyq bFPRki"
+            >
+              <a
+                class="sc-gtsqUy UBJb sc-hKFymg iJoBMj"
+                href="https://www.seiska.fi/horoskooppi"
+              >
+                Horoskooppi
+              </a>
+            </li>
+            <li
+              class="sc-iqAbyq bFPRki"
+            >
+              <a
+                class="sc-gtsqUy UBJb sc-hKFymg iJoBMj"
+                href="https://www.seiska.fi/kilpailut-ja-matkat"
+              >
+                Kilpailut
+              </a>
+            </li>
+            <li
+              class="sc-iqAbyq bFPRki"
+            >
+              <div
+                class="accordion"
+                data-accordion-component="Accordion"
+              >
+                <div
+                  class="accordion__item"
+                  data-accordion-component="AccordionItem"
+                >
+                  <div
+                    aria-level="3"
+                    class="accordion__heading"
+                    data-accordion-component="AccordionItemHeading"
+                    role="heading"
+                  >
+                    <div
+                      aria-controls="accordion__panel-:r0:"
+                      aria-disabled="false"
+                      aria-expanded="false"
+                      bold="true"
+                      class="sc-fujznN fOREje"
+                      data-accordion-component="AccordionItemButton"
+                      id="accordion__heading-:r0:"
+                      role="button"
+                      tabindex="0"
+                    >
+                      Katso
+                      <span
+                        class="sc-eCAqax sc-jSFipO sc-iCoHzw fsqkOx dGaOsA bYhkDM"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="sc-pNWRh jppwjX"
+                    data-accordion-component="AccordionItemPanel"
+                    hidden=""
+                    id="accordion__panel-:r0:"
+                  >
+                    <a
+                      class="sc-gtsqUy UBJb sc-hKFymg kUOFkD"
+                      href="https://www.seiska.fi/katso"
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      Etusivu
+                    </a>
+                    <a
+                      class="sc-gtsqUy UBJb sc-hKFymg kUOFkD"
+                      href="https://www.seiska.fi/katso/suosituimmat"
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      Suosituimmat
+                    </a>
+                    <a
+                      class="sc-gtsqUy UBJb sc-hKFymg kUOFkD"
+                      href="https://www.seiska.fi/katso/artikkelit"
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      Artikkelit
+                    </a>
+                    <a
+                      class="sc-gtsqUy UBJb sc-hKFymg kUOFkD"
+                      href="https://www.seiska.fi/katso/ohjelmisto"
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      Ohjelmatiedot
+                    </a>
+                    <a
+                      class="sc-gtsqUy UBJb sc-hKFymg kUOFkD"
+                      href="https://www.seiska.fi/katso/katsojaluvut"
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      Katsojaluvut
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li
+              class="sc-iqAbyq bFPRki"
+            >
+              <div
+                class="accordion"
+                data-accordion-component="Accordion"
+              >
+                <div
+                  class="accordion__item"
+                  data-accordion-component="AccordionItem"
+                >
+                  <div
+                    aria-level="3"
+                    class="accordion__heading"
+                    data-accordion-component="AccordionItemHeading"
+                    role="heading"
+                  >
+                    <div
+                      aria-controls="accordion__panel-:r1:"
+                      aria-disabled="false"
+                      aria-expanded="false"
+                      bold="true"
+                      class="sc-fujznN fOREje"
+                      data-accordion-component="AccordionItemButton"
+                      id="accordion__heading-:r1:"
+                      role="button"
+                      tabindex="0"
+                    >
+                      Muu
+                      <span
+                        class="sc-eCAqax sc-jSFipO sc-iCoHzw fsqkOx dGaOsA bYhkDM"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="sc-pNWRh jppwjX"
+                    data-accordion-component="AccordionItemPanel"
+                    hidden=""
+                    id="accordion__panel-:r1:"
+                  >
+                    <a
+                      class="sc-gtsqUy UBJb sc-hKFymg kUOFkD"
+                      href="https://www.seiska.fi/yhteystiedot"
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      Yhteystiedot
+                    </a>
+                    <a
+                      class="sc-gtsqUy UBJb sc-hKFymg kUOFkD"
+                      href="https://www.seiska.fi/info/kommentoinnin-saannot/1116080"
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      Kommentoinnin säännöt
+                    </a>
+                    <a
+                      class="sc-gtsqUy UBJb sc-hKFymg kUOFkD"
+                      href="https://aller.fi/meista/tietosuoja/"
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      Tietosuojaseloste
+                    </a>
+                    <a
+                      class="sc-gtsqUy UBJb sc-hKFymg kUOFkD"
+                      href="https://www.seiska.fi/kaupallinen-yhteistyo"
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      Kaupallinen yhteistyö
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div
+            class="sc-crzpnZ dTcYvA"
+          >
+            <a
+              class="sc-gtsqUy UBJb sc-dlniIP sc-dItHI hGllfd cSZbUL"
+              data-testid="user_tips_mobile"
+              href="https://www.seiska.fi/contact/user_tips"
+              id=""
+              target="_blank"
+            >
+              Vinkkaa ja tienaa
+            </a>
+            <a
+              class="sc-gtsqUy UBJb sc-dlniIP sc-dItHI dIYvlJ bKHJIv"
+              data-testid=""
+              href="https://www.seiska.fi/button"
+              id=""
+              target="_blank"
+            >
+              Tilaa
+            </a>
+            <a
+              class="sc-gtsqUy UBJb sc-dlniIP sc-dItHI cRMuki eJOSzR"
+              data-testid=""
+              href="https://www.seiska.fi/verkkolehti"
+              id=""
+              target="_blank"
+            >
+              Digilehti
+            </a>
+          </div>
+        </div>
+      </div>
       <div
         class="_backdrop_577f70"
       />

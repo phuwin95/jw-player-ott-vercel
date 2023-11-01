@@ -105,6 +105,34 @@ exports[`<Header /> > renders header 1`] = `
         </button>
       </div>
     </div>
+    <div
+      class="_hamburger_f4f7a7"
+    >
+      <div
+        aria-label="open_menu"
+        class="_iconButton_0fef65 _iconButton_f4f7a7 _mobileOnly_f4f7a7"
+        role="button"
+        tabindex="0"
+      >
+        <svg
+          aria-hidden="true"
+          class="_icon_1e9999"
+          focusable="false"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g>
+            <path
+              d="M0 0h24v24H0V0z"
+              fill="none"
+            />
+            <path
+              d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+            />
+          </g>
+        </svg>
+      </div>
+    </div>
   </header>
 </div>
 `;

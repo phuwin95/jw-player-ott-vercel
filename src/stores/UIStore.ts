@@ -8,6 +8,7 @@ type UIState = {
   userMenuOpen: boolean;
   languageMenuOpen: boolean;
   preSearchPage?: Location;
+  hamburgerMenuOpen: boolean;
 };
 
 export const useUIStore = createStore<UIState>('UIStore', () => ({
@@ -15,4 +16,5 @@ export const useUIStore = createStore<UIState>('UIStore', () => ({
   searchActive: false,
   languageMenuOpen: false,
   userMenuOpen: false,
+  hamburgerMenuOpen: false,
 }));
