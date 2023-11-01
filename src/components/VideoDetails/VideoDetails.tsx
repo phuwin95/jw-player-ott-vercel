@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import { useLocation } from 'react-router';
 
 import styles from './VideoDetails.module.scss';
 
@@ -7,6 +8,8 @@ import CollapsibleText from '#components/CollapsibleText/CollapsibleText';
 import useBreakpoint, { Breakpoint } from '#src/hooks/useBreakpoint';
 import Image from '#components/Image/Image';
 import { testId } from '#src/utils/common';
+
+type SecondaryMetadataWithTitle = { props: { children: Array<string> } };
 
 type Props = {
   title: string;
@@ -21,7 +24,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-const VideoDetails: React.VFC<Props> = ({
+const VideoDetails: React.FC<Props> = ({
   title,
   description,
   primaryMetadata,
@@ -36,19 +39,34 @@ const VideoDetails: React.VFC<Props> = ({
   const breakpoint: Breakpoint = useBreakpoint();
   const isMobile = breakpoint === Breakpoint.xs;
 
+  const { search } = useLocation();
+  const query = new URLSearchParams(search);
+  const isEpisode = Boolean(query.get('e'));
+
+  const videoType = isEpisode ? 'episode' : 'series';
+
+  const episodeTitle = (secondaryMetadata as SecondaryMetadataWithTitle)?.props?.children[2];
+  const makeEpisodeSubtitle = (title: string, primaryMetadata: string) => {
+    const episodes = primaryMetadata?.split('•').pop();
+    const episodeSubtitle = title + ' - ' + episodes;
+    return episodeSubtitle;
+  };
+
   return (
     <div data-testid={testId('cinema-layout')}>
       <div className={styles.video} data-testid={testId('video-details')}>
         <div className={classNames(styles.main, styles.mainPadding)}>
-          <Image className={styles.poster} image={image} alt={title} width={1280} />
-          <div className={styles.info}>
-            <h2 className={styles.title}>{title}</h2>
+          <div data-type={videoType}>
+            <Image className={classNames(styles.poster, { [styles.episode]: isEpisode, [styles.series]: !isEpisode })} image={image} alt={title} width={1280} />
+          </div>
+          <div className={classNames({ [styles.infoEpisode]: isEpisode, [styles.infoSeries]: !isEpisode })}>
+            <h2 className={classNames(styles.title, { [styles.episode]: isEpisode, [styles.series]: !isEpisode })}>
+              {secondaryMetadata && isEpisode ? episodeTitle : title}
+            </h2>
             <div className={styles.metaContainer}>
-              <div className={styles.primaryMetadata}>{primaryMetadata}</div>
-              {secondaryMetadata && <div className={styles.secondaryMetadata}>{secondaryMetadata}</div>}
+              <div className={styles.primaryMetadata}>{isEpisode ? makeEpisodeSubtitle(title, primaryMetadata as string) : primaryMetadata}</div>
             </div>
             <CollapsibleText text={description} className={styles.description} maxHeight={isMobile ? 60 : 'none'} />
-
             <div className={styles.buttonBar}>
               {startWatchingButton}
               {trailerButton}
