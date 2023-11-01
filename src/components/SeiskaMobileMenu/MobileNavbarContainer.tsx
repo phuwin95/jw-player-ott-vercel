@@ -10,7 +10,7 @@ const StyledMobileNavBarMenu = styld.div<{ isMenuOpen: boolean }>`
   opacity: ${(props) => (props.isMenuOpen ? '1' : '0')};
   pointer-events: ${(props) => (props.isMenuOpen ? 'auto' : 'none')};
   transition: all 0.3s ease-in-out;
-  z-index: 3;
+  z-index: 1;
   backface-visibility: hidden;
   width: 100%;
   height: 100%;
