@@ -2,8 +2,6 @@ import React, { useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Button from '#components/Button/Button';
-import Favorite from '#src/icons/Favorite';
-import FavoriteBorder from '#src/icons/FavoriteBorder';
 import useBreakpoint, { Breakpoint } from '#src/hooks/useBreakpoint';
 import type { PlaylistItem } from '#types/playlist';
 import { toggleFavorite } from '#src/stores/FavoritesController';
@@ -38,7 +36,6 @@ const FavoriteButton: React.VFC<Props> = ({ item }) => {
       <Button
         label={t('video:favorite')}
         aria-label={isFavorite ? t('video:remove_from_favorites') : t('video:add_to_favorites')}
-        startIcon={isFavorite ? <Favorite /> : <FavoriteBorder />}
         onClick={onFavoriteButtonClick}
         color={isFavorite ? 'primary' : 'default'}
         fullWidth={breakpoint < Breakpoint.md}
