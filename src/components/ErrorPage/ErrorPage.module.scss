@@ -21,6 +21,21 @@
   padding: 12px;
 }
 
+.searchError {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 50px;
+  margin: 0 auto 15px;
+  color: variables.$seiska-yellow;
+  font-family: var(--body-title-font-family);
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
 .title {
   margin-bottom: 24px;
   color: variables.$white;
