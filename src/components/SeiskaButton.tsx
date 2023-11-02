@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import styld from 'styled-components';
 
-import Link from './NextLink';
+import Link from './SeiskaLink';
 
 import type { ThemeInterface } from '#types/theme';
 

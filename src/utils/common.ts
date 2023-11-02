@@ -1,3 +1,7 @@
+import { css } from 'styled-components';
+
+import { breakpoints } from './constants';
+
 import { overrideIPCookieKey } from '#test/constants';
 
 export function debounce<T extends (...args: any[]) => void>(callback: T, wait = 200) {
@@ -93,3 +97,14 @@ export function testId(value: string | undefined) {
 
 type Truthy<T> = T extends false | '' | 0 | null | undefined ? never : T;
 export const isTruthy = <T>(value: T | true): value is Truthy<T> => Boolean(value);
+
+export const PageContentStyles = css`
+  width: 100%;
+  margin: 0 auto;
+  @media (max-width: ${breakpoints.large - 1}px) {
+    max-width: initial;
+  }
+  @media (min-width: ${breakpoints.large}px) {
+    max-width: 1025px;
+  }
+`;

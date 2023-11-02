@@ -1,7 +1,7 @@
 import React from 'react';
 import styld, { css } from 'styled-components';
 
-import Link from './NextLink';
+import Link from '../SeiskaLink';
 
 export const MobileMenuItemCss = css<{ bold: boolean | string }>`
   font-size: 1.4375rem; // 23px

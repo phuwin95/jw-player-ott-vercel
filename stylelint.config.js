@@ -284,7 +284,7 @@ module.exports = (function () {
         {
           ignoreValues: {
             '': ['currentColor', 'inherit', 'transparent'],
-            'z-index': ['-1', '0', '1', '2'],
+            'z-index': ['-1', '0', '1', '2', '3'],
           },
 
           disableFix: true,

@@ -8,7 +8,7 @@
 //
 .container {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,7 +61,7 @@
   > a {
     height: 22px;
     min-height: 22px;
-    margin: 0 28px 0 0;
+    margin-right: 22px;
     padding: 0 calc(#{variables.$base-spacing} / 2);
     font-weight: var(--body-font-weight-bold);
     font-size: 16px;
