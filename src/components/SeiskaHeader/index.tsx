@@ -39,7 +39,7 @@ const Header = () => {
 
   return (
     <StyledSeiskaHeader>
-      <OverNavBar toggleMenu={toggleMenu} />
+      <OverNavBar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
       <NavBar />
       <NavBarMenu isMenuOpen={isMenuOpen} />
     </StyledSeiskaHeader>

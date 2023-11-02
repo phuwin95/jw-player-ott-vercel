@@ -62,14 +62,21 @@ export const StyledIconWrapper = styld.button`
   margin-left: 0.5rem;
 `;
 
-export const StyledMenuIcon = styld.span`
+const getBackground = ($isMenuOpen: boolean) => {
+  const isProduction = process.env.NODE_ENV === 'production';
+  const basePath = isProduction ? '/public/videot' : '/public';
+  const icon = $isMenuOpen ? 'burger-menu-open.svg' : 'burger-menu-close.svg';
+  return `background: url(${basePath}/images/icons/${icon}) no-repeat center center;`;
+};
+
+export const StyledMenuIcon = styld.span<{ $isMenuOpen: boolean }>`
   display: inline-block;
   width: 1.5em;
   height: 1.5em;
   vertical-align: middle;
-  content: '';
+  content: "";
   background-size: 100% 100%;
-  background: url('/public/images/icons/burger-menu-close.svg') no-repeat center center;
+  ${({ $isMenuOpen }) => getBackground($isMenuOpen)};
   transition: all 0.2s;
   ${({ theme }) => theme.filters?.blackToWhite};
 `;
@@ -83,16 +90,17 @@ const StyledSearchIcon = styld.span`
   background-size: 100% 100%;
   position: relative;
   top: 2px;
-  background: url(public/images/icons/search.svg) no-repeat center center;
+  background: url(public${process.env.NODE_ENV === 'production' ? '/videot' : ''}/images/icons/search.svg) no-repeat center center;
   transition: all 0.2s;
   ${({ theme }) => theme.filters?.blackToWhite};
 `;
 
 type OverNavBarProps = {
+  isMenuOpen: boolean;
   toggleMenu: () => void;
 };
 
-const OverNavBar = ({ toggleMenu }: OverNavBarProps) => {
+const OverNavBar = ({ isMenuOpen, toggleMenu }: OverNavBarProps) => {
   const onMenuToggle = () => {
     toggleMenu();
   };
@@ -134,7 +142,7 @@ const OverNavBar = ({ toggleMenu }: OverNavBarProps) => {
             onClick={onMenuToggle}
             data-testid="menuToggle"
           >
-            <StyledMenuIcon />
+            <StyledMenuIcon $isMenuOpen={isMenuOpen} />
           </StyledIconWrapper>
         </StyledButtonGroups>
       </StyledContainer>
