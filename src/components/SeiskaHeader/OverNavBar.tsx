@@ -111,13 +111,13 @@ const OverNavBar = ({ isMenuOpen, toggleMenu }: OverNavBarProps) => {
         <SeiskaLogo />
         <StyledButtonGroups>
           <>
-            <StyledButton intent="primary" type="link" size="large" href="/button">
+            <StyledButton intent="primary" type="link" size="large" href="https://www.seiska.fi/button">
               Tilaa Lehti
             </StyledButton>
-            <StyledButton intent="green" type="link" size="large" testId="user_tips" href="/contact/user_tips">
+            <StyledButton intent="green" type="link" size="large" testId="user_tips" href="https://www.seiska.fi/contact/user_tips">
               Vinkkaa ja tienaa
             </StyledButton>
-            <StyledButton intent="blue" type="link" size="large" border="1px solid" href="/verkkolehti">
+            <StyledButton intent="blue" type="link" size="large" border="1px solid" href="https://www.seiska.fi/verkkolehti">
               Digilehti
             </StyledButton>
           </>

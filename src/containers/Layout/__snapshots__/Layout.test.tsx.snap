@@ -754,7 +754,7 @@ exports[`<Layout /> > renders layout 1`] = `
               <a
                 class="c3 c9 c10"
                 data-testid=""
-                href="/button"
+                href="https://www.seiska.fi/button"
                 id=""
                 target=""
               >
@@ -763,7 +763,7 @@ exports[`<Layout /> > renders layout 1`] = `
               <a
                 class="c3 c11 c10"
                 data-testid="user_tips"
-                href="/contact/user_tips"
+                href="https://www.seiska.fi/contact/user_tips"
                 id=""
                 target=""
               >
@@ -772,7 +772,7 @@ exports[`<Layout /> > renders layout 1`] = `
               <a
                 class="c3 c12 c10"
                 data-testid=""
-                href="/verkkolehti"
+                href="https://www.seiska.fi/verkkolehti"
                 id=""
                 target=""
               >
