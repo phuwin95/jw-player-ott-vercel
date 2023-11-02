@@ -6,6 +6,9 @@ import SeiskaLogo from './SeiskaLogo';
 import { breakpoints } from '#src/utils/constants';
 import Button from '#components/SeiskaButton';
 import { PageContentStyles } from '#src/utils/common';
+import MenuOpen from '#src/assets/icons/burger-menu-open.svg';
+import MenuClose from '#src/assets/icons/burger-menu-close.svg';
+import Search from '#src/assets/icons/search.svg';
 
 const StyledPageWrapper = styld.div`
   background-color: ${({ theme }) => theme.background};
@@ -63,10 +66,8 @@ export const StyledIconWrapper = styld.button`
 `;
 
 const getBackground = ($isMenuOpen: boolean) => {
-  const isProduction = process.env.NODE_ENV === 'production';
-  const basePath = isProduction ? '/public/videot' : '/public';
-  const icon = $isMenuOpen ? 'burger-menu-open.svg' : 'burger-menu-close.svg';
-  return `background: url(${basePath}/images/icons/${icon}) no-repeat center center;`;
+  const icon = $isMenuOpen ? MenuOpen : MenuClose;
+  return `background: url(${icon}) no-repeat center center;`;
 };
 
 export const StyledMenuIcon = styld.span<{ $isMenuOpen: boolean }>`
@@ -90,7 +91,7 @@ const StyledSearchIcon = styld.span`
   background-size: 100% 100%;
   position: relative;
   top: 2px;
-  background: url(public${process.env.NODE_ENV === 'production' ? '/videot' : ''}/images/icons/search.svg) no-repeat center center;
+  background: url(${Search}) no-repeat center center;
   transition: all 0.2s;
   ${({ theme }) => theme.filters?.blackToWhite};
 `;

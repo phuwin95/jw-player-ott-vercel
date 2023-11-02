@@ -514,7 +514,7 @@ exports[`<Layout /> > renders layout 1`] = `
   vertical-align: middle;
   content: "";
   background-size: 100% 100%;
-  background: url(/public/images/icons/burger-menu-close.svg) no-repeat center center;
+  background: url(/videot/src/assets/icons/burger-menu-close.svg) no-repeat center center;
   transition: all 0.2s;
   filter: invert(1) brightness(0.805);
 }
@@ -527,7 +527,7 @@ exports[`<Layout /> > renders layout 1`] = `
   background-size: 100% 100%;
   position: relative;
   top: 2px;
-  background: url(public/images/icons/search.svg) no-repeat center center;
+  background: url(/videot/src/assets/icons/search.svg) no-repeat center center;
   transition: all 0.2s;
   filter: invert(1) brightness(0.805);
 }
