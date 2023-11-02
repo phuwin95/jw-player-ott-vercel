@@ -191,7 +191,7 @@ const Layout = () => {
           ))}
         </Header>
         <ThemeProvider theme={darkTheme}>
-          <StyledMobileNavBarMenu isMenuOpen={hamburgerMenuOpen} ref={hamburgerRef}>
+          <StyledMobileNavBarMenu $isMenuOpen={hamburgerMenuOpen} ref={hamburgerRef}>
             <MobileMenu />
           </StyledMobileNavBarMenu>
         </ThemeProvider>

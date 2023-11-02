@@ -3,9 +3,9 @@ import styld, { css } from 'styled-components';
 
 import Link from '../SeiskaLink';
 
-export const MobileMenuItemCss = css<{ bold: boolean | string }>`
+export const MobileMenuItemCss = css<{ $bold: boolean | string }>`
   font-size: 1.4375rem; // 23px
-  font-weight: ${(props) => (props.bold ? '700' : 'normal')};
+  font-weight: ${(props) => (props.$bold ? '700' : 'normal')};
   line-height: 1.2;
   color: ${(props) => props.theme.textColor};
   padding: 15px 30px;
@@ -13,7 +13,7 @@ export const MobileMenuItemCss = css<{ bold: boolean | string }>`
   display: block;
 `;
 
-const StyledLink = styld(Link)<{ bold: boolean }>`
+const StyledLink = styld(Link)<{ $bold: boolean }>`
   ${MobileMenuItemCss}
 `;
 
@@ -27,7 +27,7 @@ export type MobileMenuItemProps = {
 };
 
 const MobileMenuItem = ({ title, href, bold, className, newTab, onClick }: MobileMenuItemProps) => (
-  <StyledLink href={href} bold={bold} className={className} external={newTab} onClick={onClick}>
+  <StyledLink href={href} $bold={bold} className={className} external={newTab} onClick={onClick}>
     {title}
   </StyledLink>
 );

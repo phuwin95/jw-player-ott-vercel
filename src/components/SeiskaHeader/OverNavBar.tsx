@@ -7,11 +7,11 @@ import { breakpoints } from '#src/utils/constants';
 import Button from '#components/SeiskaButton';
 import { PageContentStyles } from '#src/utils/common';
 
-const StyledPageWrapper = styld.div<{ isMenuOpen: boolean }>`
+const StyledPageWrapper = styld.div`
   background-color: ${({ theme }) => theme.background};
 `;
 
-const StyledContainer = styld.div<{ isMenuOpen: boolean }>`
+const StyledContainer = styld.div`
   ${PageContentStyles};
   position: relative;
   display: flex;
@@ -62,22 +62,14 @@ export const StyledIconWrapper = styld.button`
   margin-left: 0.5rem;
 `;
 
-const getBackgroundUrl = (isMenuOpen: boolean) => {
-  if (isMenuOpen) return 'url(/public/images/icons/burger-menu-open.svg)';
-  return 'url(/public/images/icons/burger-menu-close.svg)';
-};
-
-export const StyledMenuIcon = styld.span<{
-  isMenuOpen: boolean;
-}>`
+export const StyledMenuIcon = styld.span`
   display: inline-block;
   width: 1.5em;
   height: 1.5em;
   vertical-align: middle;
   content: '';
   background-size: 100% 100%;
-  background: ${({ isMenuOpen }) => getBackgroundUrl(isMenuOpen)} no-repeat
-    center center;
+  background: url('/public/images/icons/burger-menu-close.svg') no-repeat center center;
   transition: all 0.2s;
   ${({ theme }) => theme.filters?.blackToWhite};
 `;
@@ -97,18 +89,17 @@ const StyledSearchIcon = styld.span`
 `;
 
 type OverNavBarProps = {
-  isMenuOpen: boolean;
   toggleMenu: () => void;
 };
 
-const OverNavBar = ({ isMenuOpen, toggleMenu }: OverNavBarProps) => {
+const OverNavBar = ({ toggleMenu }: OverNavBarProps) => {
   const onMenuToggle = () => {
     toggleMenu();
   };
   return (
-    <StyledPageWrapper id="over-nav-bar" isMenuOpen={isMenuOpen}>
-      <StyledContainer isMenuOpen={isMenuOpen}>
-        <SeiskaLogo isMenuOpen={isMenuOpen} />
+    <StyledPageWrapper id="over-nav-bar">
+      <StyledContainer>
+        <SeiskaLogo />
         <StyledButtonGroups>
           <>
             <StyledButton intent="primary" type="link" size="large" href="/button">
@@ -143,7 +134,7 @@ const OverNavBar = ({ isMenuOpen, toggleMenu }: OverNavBarProps) => {
             onClick={onMenuToggle}
             data-testid="menuToggle"
           >
-            <StyledMenuIcon isMenuOpen={isMenuOpen} />
+            <StyledMenuIcon />
           </StyledIconWrapper>
         </StyledButtonGroups>
       </StyledContainer>

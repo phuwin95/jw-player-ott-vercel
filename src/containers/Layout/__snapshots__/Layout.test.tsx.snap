@@ -408,7 +408,7 @@ exports[`<Layout /> > renders layout 1`] = `
   transform: translateY(0%);
   transition: all 0.3s ease-in-out;
   color: #DEDEDE;
-  z-index: 3;
+  z-index: 4;
   backface-visibility: hidden;
   box-shadow: inset 0px -5px 8px -8px #DEDEDE;
 }
@@ -461,6 +461,7 @@ exports[`<Layout /> > renders layout 1`] = `
 
 .c5 {
   height: 58px;
+  fill: #DC5A54;
 }
 
 .c1 {
@@ -513,7 +514,7 @@ exports[`<Layout /> > renders layout 1`] = `
   vertical-align: middle;
   content: '';
   background-size: 100% 100%;
-  background: url(/public/images/icons/burger-menu-close.svg) no-repeat center center;
+  background: url('/public/images/icons/burger-menu-close.svg') no-repeat center center;
   transition: all 0.2s;
   filter: invert(1) brightness(0.805);
 }
@@ -1480,7 +1481,6 @@ exports[`<Layout /> > renders layout 1`] = `
                       aria-controls="accordion__panel-:r0:"
                       aria-disabled="false"
                       aria-expanded="false"
-                      bold="true"
                       class="c33"
                       data-accordion-component="AccordionItemButton"
                       id="accordion__heading-:r0:"
@@ -1564,7 +1564,6 @@ exports[`<Layout /> > renders layout 1`] = `
                       aria-controls="accordion__panel-:r1:"
                       aria-disabled="false"
                       aria-expanded="false"
-                      bold="true"
                       class="c33"
                       data-accordion-component="AccordionItemButton"
                       id="accordion__heading-:r1:"

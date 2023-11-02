@@ -2,11 +2,11 @@
 import React from 'react';
 import styld from 'styled-components';
 
-const StyledA = styld.a<{ textDecoration: boolean }>`
+const StyledA = styld.a<{ $textDecoration: boolean }>`
   text-decoration: none;
   cursor: pointer;
   color: ${({ color, theme }) => color || theme.textColor};
-  ${({ textDecoration }) => textDecoration && 'text-decoration: underline;'}
+  ${({ $textDecoration }) => $textDecoration && 'text-decoration: underline;'}
 `;
 
 /**
@@ -29,7 +29,7 @@ const Link = ({ href = '', external: toNewTab = false, className, children, colo
         onClick={onClick}
         // colorFocus={colorFocus}
         data-testid={testId}
-        textDecoration={textDecoration || false} // provide a default value of false
+        $textDecoration={textDecoration || false} // provide a default value of false
       >
         {children}
       </StyledA>
@@ -47,7 +47,7 @@ const Link = ({ href = '', external: toNewTab = false, className, children, colo
         // colorFocus={colorFocus}
         data-testid={testId}
         onClick={onClick}
-        textDecoration={textDecoration || false}
+        $textDecoration={textDecoration || false}
       >
         {children}
       </StyledA>
