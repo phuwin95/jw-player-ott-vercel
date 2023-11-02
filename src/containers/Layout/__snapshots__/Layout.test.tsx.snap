@@ -1197,6 +1197,17 @@ exports[`<Layout /> > renders layout 1`] = `
                   <a
                     class="c27"
                     color="inherit"
+                    href="https://www.seiska.fi/info/arvontojen-ja-kilpailujen-saannot/1116007"
+                  >
+                    Kilpailun säännöt
+                  </a>
+                </li>
+                <li
+                  class="c26"
+                >
+                  <a
+                    class="c27"
+                    color="inherit"
                     href="https://aller.fi/meista/tietosuoja/"
                   >
                     Tietosuojaseloste
@@ -1597,6 +1608,14 @@ exports[`<Layout /> > renders layout 1`] = `
                       target="_blank"
                     >
                       Kommentoinnin säännöt
+                    </a>
+                    <a
+                      class="c3 c38"
+                      href="https://www.seiska.fi/info/arvontojen-ja-kilpailujen-saannot/1116007"
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      Kilpailun säännöt
                     </a>
                     <a
                       class="c3 c38"
