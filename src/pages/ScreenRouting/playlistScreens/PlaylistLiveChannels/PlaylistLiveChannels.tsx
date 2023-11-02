@@ -41,7 +41,7 @@ const PlaylistLiveChannels: ScreenComponent<Playlist> = ({ data: { feedid, playl
   const liveStartDateTime = searchParams.get('start');
   const liveEndDateTime = searchParams.get('end');
   const liveFromBeginning = searchParams.get('beginning') === '1';
-  const goBack = () => feedid && navigate(liveChannelsURL(feedid, channelId));
+  const goBack = () => feedid && navigate(liveChannelsURL(feedid, channelId), { replace: true });
 
   // EPG data
   const [initialChannelId] = useState(channelId);

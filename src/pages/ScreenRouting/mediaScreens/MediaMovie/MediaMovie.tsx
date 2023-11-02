@@ -56,7 +56,11 @@ const MediaMovie: ScreenComponent<PlaylistItem> = ({ data, isLoading }) => {
   const { isEntitled } = useEntitlement(data);
 
   // Handlers
-  const goBack = () => data && navigate(mediaURL({ media: data, playlistId: feedId, play: false }));
+  const goBack = () =>
+    data &&
+    navigate(mediaURL({ media: data, playlistId: feedId, play: false }), {
+      replace: true,
+    });
   const getUrl = (item: PlaylistItem) => mediaURL({ media: item, playlistId: features?.recommendationsPlaylist });
 
   const handleComplete = useCallback(() => {
