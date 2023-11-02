@@ -110,8 +110,14 @@ const Layout = () => {
   const openLanguageMenu = useCallback(() => useUIStore.setState({ languageMenuOpen: true }), []);
   const closeLanguageMenu = useCallback(() => useUIStore.setState({ languageMenuOpen: false }), []);
   const hamburgerMenuOpen = useUIStore(({ hamburgerMenuOpen }) => hamburgerMenuOpen);
-  const openHambugerMenu = useCallback(() => useUIStore.setState({ hamburgerMenuOpen: true }), []);
-  const closeHamburgerMenu = useCallback(() => useUIStore.setState({ hamburgerMenuOpen: false }), []);
+  const openHambugerMenu = useCallback(() => {
+    useUIStore.setState({ hamburgerMenuOpen: true });
+    document.body.style.overflow = 'hidden';
+  }, []);
+  const closeHamburgerMenu = useCallback(() => {
+    useUIStore.setState({ hamburgerMenuOpen: false });
+    document.body.style.overflow = 'auto';
+  }, []);
 
   const hamburgerRef = useTouchOutside<HTMLDivElement>(closeHamburgerMenu, hamburgerMenuOpen);
 
