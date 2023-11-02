@@ -78,7 +78,11 @@ const LegacySeries = () => {
   const hasSubscription = !!subscription;
 
   // Handlers
-  const goBack = () => episode && navigate(legacySeriesURL({ episodeId: episode.mediaid, seriesId, play: false, playlistId: feedId }));
+  const goBack = () =>
+    episode &&
+    navigate(legacySeriesURL({ episodeId: episode.mediaid, seriesId, play: false, playlistId: feedId }), {
+      replace: true,
+    });
   const getUrl = (toEpisode: PlaylistItem) => {
     return seriesPlaylist ? legacySeriesURL({ episodeId: toEpisode.mediaid, seriesId, play: false, playlistId: feedId }) : '';
   };
