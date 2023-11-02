@@ -114,7 +114,7 @@ const MediaSeries: ScreenComponent<PlaylistItem> = ({ data: seriesMedia }) => {
 
   // Handlers
   const goBack = useCallback(() => {
-    setSearchParams({ ...searchParams, e: episode?.mediaid, r: feedId || '' });
+    setSearchParams({ ...searchParams, e: episode?.mediaid, r: feedId || '' }, { replace: true });
   }, [setSearchParams, searchParams, episode, feedId]);
 
   const handleComplete = useCallback(async () => {
