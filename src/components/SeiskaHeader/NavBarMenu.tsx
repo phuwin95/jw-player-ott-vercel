@@ -14,7 +14,7 @@ const StyledLayout = styld.div`
   }
 `;
 
-const StyledMenuContainer = styld.div<{ isMenuOpen: boolean }>`
+const StyledMenuContainer = styld.div<{ $isMenuOpen: boolean }>`
   position: absolute;
   bottom: 0;
   width: inherit;
@@ -23,10 +23,10 @@ const StyledMenuContainer = styld.div<{ isMenuOpen: boolean }>`
   align-items: flex-start;
   padding: 1.5rem 2.5rem;
   background-color: ${(props) => props.theme.background};
-  transform: ${(props) => (props.isMenuOpen ? 'translateY(100%)' : 'translateY(0%)')};
+  transform: ${(props) => (props.$isMenuOpen ? 'translateY(100%)' : 'translateY(0%)')};
   transition: all 0.3s ease-in-out;
   color: ${(props) => props.theme.textColor};
-  z-index: 3;
+  z-index: 4;
   backface-visibility: hidden;
   box-shadow: inset 0px -5px 8px -8px ${({ theme }) => theme.colors.black};
 `;
@@ -65,7 +65,7 @@ type NavBarMenuProps = {
 
 const NavBarMenu = ({ isMenuOpen }: NavBarMenuProps) => (
   <StyledLayout>
-    <StyledMenuContainer isMenuOpen={isMenuOpen}>
+    <StyledMenuContainer $isMenuOpen={isMenuOpen}>
       {HAMBURGER_MENU_ITEMS?.map &&
         HAMBURGER_MENU_ITEMS?.map(({ name, items }) => (
           <StyledMenuItem key={name}>

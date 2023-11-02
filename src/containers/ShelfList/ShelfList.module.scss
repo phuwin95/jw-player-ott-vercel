@@ -17,17 +17,17 @@
 
 .shelfContainer {
   position: relative;
-  padding: 12px 56px;
+  padding: 0 56px 12px;
 
   &.featured {
-    padding: 12px 20%;
+    padding: 0 20% 12px;
   }
 
   @include responsive.mobile-only() {
-    padding: 8px 60px 8px variables.$base-spacing;
+    padding: 0 60px 8px variables.$base-spacing;
 
     &.featured {
-      padding: 8px variables.$base-spacing;
+      padding: 0 variables.$base-spacing 8px;
     }
   }
 
@@ -35,7 +35,7 @@
     padding: 0 calc(#{variables.$base-spacing} * 2);
 
     &.featured {
-      padding: 8px 10%;
+      padding: 0 10% 8px;
     }
   }
 }

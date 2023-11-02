@@ -17,7 +17,7 @@ const StyledChevronDown = styld(ChevronDown)`
   position: absolute;
 `;
 
-const StyledItem = styld(AccordionItemButton)<{ bold: string | boolean }>`
+const StyledItem = styld(AccordionItemButton)<{ $bold: string | boolean }>`
   ${MobileMenuItemCss}
   cursor: pointer;
   position: relative;
@@ -39,7 +39,7 @@ export default function CollapsibleItem({ children, title }: CollapsibleItemProp
     <Accordion allowZeroExpanded onChange={toggle}>
       <AccordionItem>
         <AccordionItemHeading>
-          <StyledItem bold="true">
+          <StyledItem $bold="true">
             {title}
             {isOpen ? <StyledChevronUp /> : <StyledChevronDown />}
           </StyledItem>

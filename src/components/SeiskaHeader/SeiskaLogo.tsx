@@ -12,7 +12,7 @@ const StyledLogoLink = styld(SeiskaLink)`
     max-width: 135px;
   }
   img {
-    ${({ theme }) => theme.name === 'darkTheme' && theme.filters?.redToDarkerRed};
+    ${({ theme }) => theme.filters?.redToDarkerRed};
   }
 `;
 
@@ -24,22 +24,17 @@ const StyledPathForeground = styld.path`
   fill: ${({ theme }) => theme.colors.seiskaRed};
 `;
 
-const StyledSvg = styld.svg<{ isGrayOut?: boolean; isMenuOpen?: boolean }>`
-  height: ${({ isGrayOut }) => (isGrayOut ? '44px' : '58px')};
+const StyledSvg = styld.svg`
+  height: 58px;
   @media (max-width: ${breakpoints.tablet}px) {
     height: 38px;
   }
-  ${StyledPathForeground} {
-    ${({ isGrayOut, isMenuOpen }) => isGrayOut && !isMenuOpen && `fill: #fff;`};
-    @media (max-width: ${breakpoints.mobile}px) {
-      ${({ isMenuOpen, theme }) => isMenuOpen && `fill: ${theme.textWhite};`};
-    }
-  }
+  fill: ${({ theme }) => theme.colors.seiskaRed};
 `;
 
-const SeiskaLogo = ({ isGrayOut, isMenuOpen }: { isGrayOut?: boolean; isMenuOpen?: boolean }) => (
+const SeiskaLogo = () => (
   <StyledLogoLink href="https://www.seiska.fi">
-    <StyledSvg isGrayOut={isGrayOut} isMenuOpen={isMenuOpen} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1156.03 315.95">
+    <StyledSvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1156.03 315.95">
       <title id="logo-seiska">Seiskan logo</title>
       <desc id="logo-seiska-desc">Seiskan logo</desc>
       <StyledPathBackground d="M983.46,229.37a38,38,0,0,0,20.55-6c6.2-3.92,9.69-8.58,10.69-14.24l2-11.12c-15.46.17-27.36,2-35.41,5.37s-12.59,7.89-13.55,13.34c-.65,3.69-.16,6.45,1.5,8.43C971.54,228,976.33,229.37,983.46,229.37Z" />

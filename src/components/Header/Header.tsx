@@ -92,7 +92,6 @@ const Header: React.FC<Props> = ({
   const { t } = useTranslation('menu');
   const [logoLoaded, setLogoLoaded] = useState(false);
   const toggleMenu = () => {
-    document.body.style.overflow = hamburgerMenuOpen ? 'auto' : 'hidden';
     if (hamburgerMenuOpen) closeHamburgerMenu();
     else openHamburgerMenu();
   };

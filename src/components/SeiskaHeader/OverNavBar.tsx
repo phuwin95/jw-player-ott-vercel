@@ -7,11 +7,11 @@ import { breakpoints } from '#src/utils/constants';
 import Button from '#components/SeiskaButton';
 import { PageContentStyles } from '#src/utils/common';
 
-const StyledPageWrapper = styld.div<{ isMenuOpen: boolean }>`
+const StyledPageWrapper = styld.div`
   background-color: ${({ theme }) => theme.background};
 `;
 
-const StyledContainer = styld.div<{ isMenuOpen: boolean }>`
+const StyledContainer = styld.div`
   ${PageContentStyles};
   position: relative;
   display: flex;
@@ -62,22 +62,21 @@ export const StyledIconWrapper = styld.button`
   margin-left: 0.5rem;
 `;
 
-const getBackgroundUrl = (isMenuOpen: boolean) => {
-  if (isMenuOpen) return 'url(/public/images/icons/burger-menu-open.svg)';
-  return 'url(/public/images/icons/burger-menu-close.svg)';
+const getBackground = ($isMenuOpen: boolean) => {
+  const isProduction = process.env.NODE_ENV === 'production';
+  const basePath = isProduction ? '/public/videot' : '/public';
+  const icon = $isMenuOpen ? 'burger-menu-open.svg' : 'burger-menu-close.svg';
+  return `background: url(${basePath}/images/icons/${icon}) no-repeat center center;`;
 };
 
-export const StyledMenuIcon = styld.span<{
-  isMenuOpen: boolean;
-}>`
+export const StyledMenuIcon = styld.span<{ $isMenuOpen: boolean }>`
   display: inline-block;
   width: 1.5em;
   height: 1.5em;
   vertical-align: middle;
-  content: '';
+  content: "";
   background-size: 100% 100%;
-  background: ${({ isMenuOpen }) => getBackgroundUrl(isMenuOpen)} no-repeat
-    center center;
+  ${({ $isMenuOpen }) => getBackground($isMenuOpen)};
   transition: all 0.2s;
   ${({ theme }) => theme.filters?.blackToWhite};
 `;
@@ -91,7 +90,7 @@ const StyledSearchIcon = styld.span`
   background-size: 100% 100%;
   position: relative;
   top: 2px;
-  background: url(public/images/icons/search.svg) no-repeat center center;
+  background: url(public${process.env.NODE_ENV === 'production' ? '/videot' : ''}/images/icons/search.svg) no-repeat center center;
   transition: all 0.2s;
   ${({ theme }) => theme.filters?.blackToWhite};
 `;
@@ -106,9 +105,9 @@ const OverNavBar = ({ isMenuOpen, toggleMenu }: OverNavBarProps) => {
     toggleMenu();
   };
   return (
-    <StyledPageWrapper id="over-nav-bar" isMenuOpen={isMenuOpen}>
-      <StyledContainer isMenuOpen={isMenuOpen}>
-        <SeiskaLogo isMenuOpen={isMenuOpen} />
+    <StyledPageWrapper id="over-nav-bar">
+      <StyledContainer>
+        <SeiskaLogo />
         <StyledButtonGroups>
           <>
             <StyledButton intent="primary" type="link" size="large" href="/button">
@@ -143,7 +142,7 @@ const OverNavBar = ({ isMenuOpen, toggleMenu }: OverNavBarProps) => {
             onClick={onMenuToggle}
             data-testid="menuToggle"
           >
-            <StyledMenuIcon isMenuOpen={isMenuOpen} />
+            <StyledMenuIcon $isMenuOpen={isMenuOpen} />
           </StyledIconWrapper>
         </StyledButtonGroups>
       </StyledContainer>
