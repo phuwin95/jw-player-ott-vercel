@@ -44,7 +44,7 @@ function run() {
     }, {} as { [filename: string]: Line[] });
 
     Object.entries(groups).forEach(([jsonFile, lines]) => {
-      const filename = `public${process.env.NODE_ENV === 'production' ? '/videot' : ''}/locales/${language}/${jsonFile}`;
+      const filename = `public/locales/${language}/${jsonFile}`;
 
       const json = JSON.parse(fs.readFileSync(filename).toString());
 
