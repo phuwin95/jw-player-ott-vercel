@@ -52,6 +52,11 @@ export const KATSO_MENU_ITEMS: Item[] = [
 export const SETTING_MENU_ITEMS: Item[] = [
   { title: 'Yhteystiedot', url: BASE_URL + '/yhteystiedot', internal: true },
   { title: 'Kommentoinnin säännöt', url: BASE_URL + '/info/kommentoinnin-saannot/1116080', internal: true },
+  {
+    title: 'Kilpailun säännöt',
+    url: BASE_URL + '/info/arvontojen-ja-kilpailujen-saannot/1116007',
+    internal: true,
+  },
   { title: 'Tietosuojaseloste', url: 'https://aller.fi/meista/tietosuoja/' },
   { title: 'Kaupallinen yhteistyö', url: BASE_URL + '/kaupallinen-yhteistyo', internal: true },
 ];
