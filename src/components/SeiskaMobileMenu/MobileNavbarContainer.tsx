@@ -4,7 +4,7 @@ import { breakpoints } from '#src/utils/constants';
 
 const StyledMobileNavBarMenu = styld.div<{ isMenuOpen: boolean }>`
   position: absolute;
-  top: 56px;
+  top: 51px;
   left: 0;
   transform: ${(props) => (props.isMenuOpen ? 'translateY(0)' : 'translateY(-100%)')};
   opacity: ${(props) => (props.isMenuOpen ? '1' : '0')};

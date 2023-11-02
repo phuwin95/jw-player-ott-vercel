@@ -3,7 +3,7 @@
 exports[`<Layout /> > renders layout 1`] = `
 .c28 {
   position: absolute;
-  top: 56px;
+  top: 51px;
   left: 0;
   transform: translateY(-100%);
   opacity: 0;
