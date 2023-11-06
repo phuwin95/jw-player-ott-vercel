@@ -1,7 +1,7 @@
 {
-  "close_menu": "Close menu",
-  "open_menu": "Open menu",
-  "open_user_menu": "Open user menu",
+  "close_menu": "Sulje valikko",
+  "open_menu": "Näytä valikko",
+  "open_user_menu": "Näytä käyttäjävalikko",
   "select_language": "Valitse kieli",
   "sign_in": "Kirjaudu sisään",
   "sign_up": "Kirjaudu ulos"

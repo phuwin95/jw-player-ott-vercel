@@ -1,29 +1,29 @@
 {
   "alert": {
-    "close": "Close",
-    "success": "Success",
-    "title": "An error occurred"
+    "close": "Sulje",
+    "success": "Onnistui",
+    "title": "Tapahtui virhe"
   },
   "back": "Takaisin",
-  "card_lock": "Item locked",
+  "card_lock": "Kohde lukittu",
   "close_modal": "Sulje",
   "confirmation_dialog": {
     "close": "Peruuta",
     "confirm": "Kyllä"
   },
-  "default_description": "JW OTT Webapp is an open-source, dynamically generated video website.",
-  "default_site_name": "My OTT Application",
-  "filter_videos_by": "Filter videos by {{name}}",
-  "filter_videos_by_genre": "Filter videos by genre",
+  "default_description": "JW OTT Webapp on avoimeen lähdekoodiin perustuva, dynaamisesti luotu video sivusto.",
+  "default_site_name": "Seiska.fi - videot",
+  "filter_videos_by": "Suodatettu nimen mukaan: {{name}}",
+  "filter_videos_by_genre": "Suodata videot tyylin mukaan",
   "home": "Etusivu",
-  "live": "LIVE",
-  "now": "Now",
-  "optional": "(Optional)",
-  "play_item": "Play {{title}}",
-  "scheduled": "Scheduled",
+  "live": "Suora",
+  "now": "Nyt",
+  "optional": "(Vaihtoehtoinen)",
+  "play_item": "Toista {{title}}",
+  "scheduled": "Ajoitettu",
   "series": "Sarja",
   "sign_in": "Kirjaudu sisään",
   "sign_up": "Kirjaudu ulos",
-  "slide_left": "Slide left",
-  "slide_right": "Slide right"
+  "slide_left": "Pyyhkäise vasemmalle",
+  "slide_right": "Pyyhkäise oikealle"
 }
