@@ -2,11 +2,11 @@ name: Test - End to End
 
 on:
   pull_request:
-    branches: [ 'develop', 'feat/*', 'feature/*', 'release', 'release-candidate' ]
+    branches: ['develop', 'feat/*', 'feature/*', 'release', 'release-candidate']
   push:
-    branches: [ 'develop', 'release', 'release-candidate' ]
-  schedule:
-    - cron: '30 3 * * 1-5'
+    branches: ['develop', 'release', 'release-candidate']
+  # schedule:
+  #   - cron: '30 3 * * 1-5'
   workflow_dispatch:
 
 jobs:
