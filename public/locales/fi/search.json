@@ -1,19 +1,19 @@
 {
-  "error_description": "Reload this page or try again later.",
-  "error_heading": "Something went wrong",
-  "error_subheading": "It looks like we had an issue loading this page...",
-  "heading": "Search results",
-  "no_results_heading": "No results found for \"{{query}}\"",
+  "error_description": "Lataa sivu uudelleen tai yritä myöhemmin uudelleen.",
+  "error_heading": "Jokin meni pieleen.",
+  "error_subheading": "Ongelmia sivun latautumisessa...",
+  "heading": "Haku tulokset",
+  "no_results_heading": "Yhtään osumaa ei löytynyt \"{{query}}\"",
   "search_bar": {
-    "clear_search_label": "Clear search",
-    "search_label": "Search",
-    "search_placeholder": "Search..."
+    "clear_search_label": "Tyhjennä haku",
+    "search_label": "Haku",
+    "search_placeholder": "Kirjoita hakusana"
   },
-  "start_typing": "Type something in the search box to start searching",
-  "suggestions": "Suggestions:",
-  "tip_one": "Make sure all words are spelled correctly",
-  "tip_two": "Make search terms more general",
-  "tip_three": "Try different search terms",
-  "title_one": "{{count}} result for \"{{query}}\"",
-  "title_other": "{{count}} results for \"{{query}}\""
+  "start_typing": "Kirjoita hakusana aloittaaksesi haku",
+  "suggestions": "Ehdotukset:",
+  "tip_one": "Varmista sanojen oikein kirjoitus",
+  "tip_two": "Käytä perusmuotoisia sajona",
+  "tip_three": "Kokeile eri hakusajona",
+  "title_one": "{{count}} tulosta haulle \"{{query}}\"",
+  "title_other": "{{count}} tulosta haulle \"{{query}}\""
 }

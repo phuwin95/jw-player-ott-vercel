@@ -1,13 +1,13 @@
 {
-  "check_your_config": "There was a problem retrieving the application configuration. Try again later. If the problem persists contact technical support.",
-  "check_your_settings": "There was a problem loading the default settings. Try again later. If the problem persists contact technical support.",
-  "config_invalid": "Invalid or missing config",
-  "generic_error_description": "Try refreshing this page or come back later.",
-  "generic_error_heading": "There was an issue loading the application",
-  "learn_more": "Learn more",
-  "notfound_error_description": "This page doesn't exist.",
-  "notfound_error_heading": "Not found",
-  "playlist_not_found": "Playlist not found",
-  "settings_invalid": "Invalid or missing settings",
-  "video_not_found": "Video not found"
+  "check_your_config": "Sovellusmääritysten hakemisessa ilmeni ongelma. Yritä uudelleen myöhemmin. Jos ongelma jatkuu, ota yhteys tekniseen tukeen.",
+  "check_your_settings": "Tapahtui ongelma ladattaessa oletusasetuksia. Yritä uudelleen myöhemmin. Jos ongelma jatkuu, ota yhteys tekniseen tukeen.",
+  "config_invalid": "Virheelliset tai puuttuvat konfiguraatio",
+  "generic_error_description": "Lataa sivu uudelleen tai yritä myöhemmin uudelleen.",
+  "generic_error_heading": "Sovelluksen lataamisessa ongelma",
+  "learn_more": "Lue lisää",
+  "notfound_error_description": "Tätä sivua ei ole olemassa.",
+  "notfound_error_heading": "Sivua ei löytynyt",
+  "playlist_not_found": "Soittolistaa ei löytynyt",
+  "settings_invalid": "Virheelliset tai puuttuvat asetukset",
+  "video_not_found": "Videota ei löytynyt"
 }
