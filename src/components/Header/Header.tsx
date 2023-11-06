@@ -185,11 +185,15 @@ const Header: React.FC<Props> = ({
       <nav className={styles.nav} aria-label="menu">
         {logoLoaded || !logoSrc ? children : null}
       </nav>
-      <div className={styles.actions}>
-        {renderSearch()}
-        {renderLanguageDropdown()}
-        {renderUserActions()}
-      </div>
+      {!(!isHome && breakpoint <= Breakpoint.xs) ? (
+        <>
+          <div className={styles.actions}>
+            {renderSearch()}
+            {renderLanguageDropdown()}
+            {renderUserActions()}
+          </div>
+        </>
+      ) : null}
       <div className={styles.hamburger}>
         <IconButton className={classNames(styles.iconButton, styles.mobileOnly)} aria-label={t('open_menu')} onClick={toggleMenu}>
           {hamburgerMenuOpen ? <CloseIcon /> : <Hamburger />}
