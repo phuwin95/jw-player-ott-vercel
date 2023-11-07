@@ -53,7 +53,7 @@ export const SETTING_MENU_ITEMS: Item[] = [
   { title: 'Yhteystiedot', url: BASE_URL + '/yhteystiedot', internal: true },
   {
     title: 'Asenna Seiska puhelimeesi',
-    url: '/info/asenna-seiska-puhelimeesi/1121854',
+    url: BASE_URL + '/info/asenna-seiska-puhelimeesi/1121854',
     internal: true,
   },
   { title: 'Kommentoinnin säännöt', url: BASE_URL + '/info/kommentoinnin-saannot/1116080', internal: true },
