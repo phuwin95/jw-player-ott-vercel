@@ -1186,6 +1186,17 @@ exports[`<Layout /> > renders layout 1`] = `
                   <a
                     class="c27"
                     color="inherit"
+                    href="https://www.seiska.fi/info/asenna-seiska-puhelimeesi/1121854"
+                  >
+                    Asenna Seiska puhelimeesi
+                  </a>
+                </li>
+                <li
+                  class="c26"
+                >
+                  <a
+                    class="c27"
+                    color="inherit"
                     href="https://www.seiska.fi/info/kommentoinnin-saannot/1116080"
                   >
                     Kommentoinnin säännöt
@@ -1600,6 +1611,14 @@ exports[`<Layout /> > renders layout 1`] = `
                       target="_blank"
                     >
                       Yhteystiedot
+                    </a>
+                    <a
+                      class="c3 c38"
+                      href="https://www.seiska.fi/info/asenna-seiska-puhelimeesi/1121854"
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      Asenna Seiska puhelimeesi
                     </a>
                     <a
                       class="c3 c38"
