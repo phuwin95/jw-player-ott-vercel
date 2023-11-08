@@ -3,6 +3,8 @@
 @use 'src/styles/mixins/responsive';
 
 .playlist {
+  position: relative;
+  top: -60px;
   margin: 0 calc(#{variables.$base-spacing} * 4);
   color: var(--primary-color);
   font-family: var(--body-alt-font-family);
@@ -23,6 +25,10 @@
   @include responsive.desktop-small-only() {
     margin: 0 calc(#{variables.$base-spacing} * 3);
   }
+
+  @include responsive.tablet-and-larger {
+    top: 0;
+  }
 }
 
 .main {
@@ -34,6 +40,10 @@
   align-items: center;
   height: 36px;
   margin: 18px 0 30px 0;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1.15;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.76);
 
   > h2 {
     width: 100%;
@@ -41,14 +51,6 @@
     font-weight: var(--body-font-weight-bold);
     font-size: 30px;
     line-height: 1.15;
-  }
-
-  @include responsive.mobile-and-tablet {
-    justify-content: space-between;
-    margin: 0;
-    h2 {
-      font-size: 16px;
-    }
   }
 }
 
