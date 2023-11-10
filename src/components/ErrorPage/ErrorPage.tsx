@@ -37,7 +37,7 @@ export const ErrorPageWithoutTranslation = ({ title, children, message, learnMor
     <div className={styles.errorPage}>
       <div className={styles.box}>
         {/* <img className={styles.image} src={logo || '/images/logo.png'} alt={'Logo'} /> */}
-        <h1 className={styles.searchError}>Whoops!</h1>
+        <h1 className={styles.searchError}>Jösses!</h1>
         <header>
           <h2 className={styles.title}>{title || 'An error occurred'}</h2>
         </header>
