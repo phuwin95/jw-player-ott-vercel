@@ -11,7 +11,6 @@ import { initializeFavorites } from '#src/stores/FavoritesController';
 import { initializeAdSchedule } from '#src/stores/ConfigController';
 
 const CONFIG_HOST = import.meta.env.APP_API_BASE_URL;
-const CONFIG_FRONT_HOST = import.meta.env.APP_API_FRONT_URL;
 
 const setCssVariables = ({ backgroundColor, highlightColor, headerBackground }: Styling) => {
   const root = document.querySelector(':root') as HTMLElement;
