@@ -34,7 +34,7 @@ const setCssVariables = ({ backgroundColor, highlightColor, headerBackground }: 
 const maybeInjectAnalyticsLibrary = (config: Config) => {
   if (!config.analyticsToken) return;
 
-  return addScript(`${CONFIG_FRONT_HOST}/jwpltx.js`);
+  return addScript('/videot/jwpltx.js');
 };
 
 const calculateAccessModel = (config: Config): AccessModel => {

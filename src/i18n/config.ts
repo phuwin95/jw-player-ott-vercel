@@ -70,6 +70,10 @@ const initI18n = async () => {
         caches: ['localStorage'],
         lookupLocalStorage: 'jwapp.language',
       },
+      backend: {
+        // for all available options read the backend's repository readme file
+        loadPath: '/videot/locales/{{lng}}/{{ns}}.json'
+      },
       react: {
         // disabled suspense to prevent re-loading the app while loading the resources
         useSuspense: false,
