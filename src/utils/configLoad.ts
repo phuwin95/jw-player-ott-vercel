@@ -11,6 +11,7 @@ import { initializeFavorites } from '#src/stores/FavoritesController';
 import { initializeAdSchedule } from '#src/stores/ConfigController';
 
 const CONFIG_HOST = import.meta.env.APP_API_BASE_URL;
+const CONFIG_FRONT_HOST = import.meta.env.APP_API_FRONT_URL;
 
 const setCssVariables = ({ backgroundColor, highlightColor, headerBackground }: Styling) => {
   const root = document.querySelector(':root') as HTMLElement;
@@ -33,7 +34,7 @@ const setCssVariables = ({ backgroundColor, highlightColor, headerBackground }: 
 const maybeInjectAnalyticsLibrary = (config: Config) => {
   if (!config.analyticsToken) return;
 
-  return addScript('/jwpltx.js');
+  return addScript(`${CONFIG_FRONT_HOST}/jwpltx.js`);
 };
 
 const calculateAccessModel = (config: Config): AccessModel => {
