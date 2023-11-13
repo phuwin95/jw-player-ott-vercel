@@ -29,6 +29,7 @@
 // Header brand/logo
 //
 .iconButton {
+  z-index: 2;
   width: 36px;
   height: 36px;
 
@@ -156,6 +157,7 @@
   }
 
   .menu {
+    z-index: 2;
     display: flex;
     grid-area: menu;
     padding-left: 6px;
