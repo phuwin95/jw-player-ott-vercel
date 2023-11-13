@@ -5,7 +5,7 @@ import { logDev } from '#src/utils/common';
 import { OTT_GLOBAL_PLAYER_ID } from '#src/config';
 
 export const initSettings = async () => {
-  const settings = await fetch('/.webapp.ini')
+  const settings = await fetch('/videot/.webapp.ini')
     .then((result) => result.text())
     .then((iniString) => ini.parse(iniString) as Settings)
     .catch((e) => {

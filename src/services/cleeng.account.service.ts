@@ -227,7 +227,7 @@ export const getCustomer: GetCustomer = async (payload, sandbox) => {
 };
 
 export const getLocales: GetLocales = async (sandbox) => {
-  return get(sandbox, `/locales${getOverrideIP() ? '?customerIP=' + getOverrideIP() : ''}`);
+  return get(sandbox, `/videot/locales${getOverrideIP() ? '?customerIP=' + getOverrideIP() : ''}`);
 };
 
 const handleErrors = (errors: ApiResponse['errors']) => {

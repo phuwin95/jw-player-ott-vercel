@@ -33,7 +33,7 @@ exports[`<DemoConfigDialog> > renders and matches snapshot error dialog 1`] = `
         <h1
           class="_searchError_8c5621"
         >
-          Whoops!
+          Jösses!
         </h1>
         <header>
           <h2

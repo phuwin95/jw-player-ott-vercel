@@ -11,8 +11,8 @@
   },
   "start_typing": "Kirjoita hakusana aloittaaksesi haku",
   "suggestions": "Ehdotukset:",
-  "tip_one": "Varmista sanojen oikein kirjoitus",
-  "tip_two": "Käytä perusmuotoisia sajona",
+  "tip_one": "Varmista sanojen oikeinkirjoitus",
+  "tip_two": "Käytä perusmuotoisia sanoja",
   "tip_three": "Kokeile eri hakusajona",
   "title_one": "{{count}} tulosta haulle \"{{query}}\"",
   "title_other": "{{count}} tulosta haulle \"{{query}}\""
