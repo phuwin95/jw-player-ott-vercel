@@ -22,6 +22,6 @@ module.exports = {
   lineEnding: 'auto',
   locales,
   namespaceSeparator: ':',
-  output: 'public/locales/$LOCALE/$NAMESPACE.json',
+  output: 'public/videot/locales/$LOCALE/$NAMESPACE.json',
   sort: true,
 };
