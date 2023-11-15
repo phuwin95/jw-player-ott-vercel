@@ -1,33 +1,27 @@
-![JW OTT Webapp](docs/_images/homepage-screenshot.png)
-
 The JW OTT Webapp is an open-source, dynamically generated video website built around JW Player and JW Platform services. It enables you to easily publish your JW Player-hosted video content with no coding and minimal configuration.
 
-**Examples of JW OTT Webapp in action:**
+## JW OTT Webapp for Seiska
+We develop on top of the original JW OTT Webapp to tailor make for our own use and the Seiska's feels and looks. This is a fork of the original project. What has been included:
+- Fonts and colors from Seiska
+- Navbar from Seiska
+- Mobile navbar from Seiska
+- Custom Back button 
+- Custom layout for the video page (different title, subtitles and buttons)
+- Finnish translations
+- Custom root dir that is used in the build process to work with /videot url
+- Some custom behavior that our designer has specified
 
-- [Free Content + Live + EPG](https://app-preview.jwplayer.com/?app-config=225tvq1i)
-- [Ad-based Monetization](https://app-preview.jwplayer.com/?app-config=egpovogv)
-- [Subscription-based Monetization](https://app-preview.jwplayer.com/?app-config=kziwdpjr)
-- [Authentication-based Access](https://app-preview.jwplayer.com/?app-config=ajs7jdfk)
-- [Right Rail Page Layout (Inline Player)](https://app-preview.jwplayer.com/?app-config=1rbui8uf)
+## Deployment and development
+The deployment is made using Cloudflare Pages. The deployment is made from the main branch. The deployment is made automatically when the main branch is updated. 
 
-**Examples built using the JW OTT Webapp**
+To update the main branch, create a new branch from the main branch. Make the changes and create a pull request to the main branch. After the pull request is accepted, the main branch is updated and the deployment is made automatically.
 
-<table>
-  <tr>
-    <td>
-      <p>Symphony <br/> (<a href="https://symphony.live/">symphony.live</a>)</p>
-      <img src="docs/_images/symphony.png" alt="Symphony" height="200">
-    </td>
-    <td>
-      <p>FansChoice.tv  <br/> (<a href="https://www.fanschoice.tv/">fanschoice.tv</a>)</p>
-      <img src="docs/_images/fanschoice.png" alt="FansChoice" height="200">
-    </td>
-    <td>
-      <p>Trinity Broadcasting Network  <br/> (<a href="https://watch.tbn.org/">watch.tbn.org</a>)</p>
-      <img src="docs/_images/tbn.png" alt="TBN" height="200">
-    </td>
-  </tr>
-</table>
+### Some caveats
+#### Snapshots
+Test snapshots can be updated by running `yarn test-update`
+#### Error commiting to main branch
+- check that your commit message follows the [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) format (e.g. `feat: add new feature`)
+- if you are using vscode version control plugin to commit, it might be difficult to see the errors. You can run `yarn pre-commit`, it will run the same checks as husky does and will show you the errors in the command line. Or then make a commit using the command line for example `git commit -m "feat: add new feature"`. This will tell you the error message.
 
 ## Documentation
 
