@@ -91,6 +91,7 @@ const Header: React.FC<Props> = ({
 }) => {
   const { t } = useTranslation('menu');
   const [logoLoaded, setLogoLoaded] = useState(false);
+  const isEmbedded = window.self !== window.top;
   const toggleMenu = () => {
     if (hamburgerMenuOpen) closeHamburgerMenu();
     else openHamburgerMenu();
@@ -194,11 +195,13 @@ const Header: React.FC<Props> = ({
           </div>
         </>
       ) : null}
-      <div className={styles.hamburger}>
-        <IconButton className={classNames(styles.iconButton, styles.mobileOnly)} aria-label={t('open_menu')} onClick={toggleMenu}>
-          {hamburgerMenuOpen ? <CloseIcon /> : <Hamburger />}
-        </IconButton>
-      </div>
+      {!isEmbedded && (
+        <div className={styles.hamburger}>
+          <IconButton className={classNames(styles.iconButton, styles.mobileOnly)} aria-label={t('open_menu')} onClick={toggleMenu}>
+            {hamburgerMenuOpen ? <CloseIcon /> : <Hamburger />}
+          </IconButton>
+        </div>
+      )}
     </header>
   );
 };
