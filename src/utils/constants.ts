@@ -56,6 +56,11 @@ export const SETTING_MENU_ITEMS: Item[] = [
     url: BASE_URL + '/info/asenna-seiska-puhelimeesi/1121854',
     internal: true,
   },
+  {
+    title: 'Tilaa uutisilmoitukset',
+    url: 'https://www.seiska.fi/info/tilaa-uutisilmoitukset/1191910',
+    internal: true,
+  },
   { title: 'Kommentoinnin säännöt', url: BASE_URL + '/info/kommentoinnin-saannot/1116080', internal: true },
   {
     title: 'Kilpailun säännöt',
